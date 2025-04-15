@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContextBase Python SDK - Project Overview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        h1 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #1e40af;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        h3 {
+            color: #3b82f6;
+            margin-top: 30px;
+        }
+        .diagram-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+        /* Enhanced styling for diagrams */
+        .diagram-container.enhanced {
+            padding: 40px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+        .diagram {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .component-box {
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f0f7ff;
+        }
+        .file-structure {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .tech-item {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .flow-diagram {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .mermaid {
+            margin: 0 auto;
+            overflow: auto;
+            font-size: 18px;
+        }
+        /* Enhanced styling for diagrams */
+        .diagram-container.enhanced {
+            padding: 40px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({ 
+                startOnLoad: true,
+                theme: 'default',
+                securityLevel: 'loose',
+                flowchart: { 
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'linear',
+                    nodeSpacing: 80,
+                    rankSpacing: 100
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>ContextBase Python SDK - Project Overview</h1>
+        <p>A Python SDK for interacting with the ContextBase MCP API, a simple key-value memory storage service</p>
+        <div class="project-links" style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+            <a href="https://github.com/imfeniljikadara/contextbase-py" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 30px; height: 30px; margin-right: 8px;">
+                <span>GitHub Repository</span>
+            </a>
+            <a href="https://pypi.org/project/contextbase-py/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="PyPI Logo" style="width: 30px; height: 30px; margin-right: 8px;">
+                <span>PyPI Package</span>
+            </a>
+        </div>
+    </header>
+
+    <h2>Project Description</h2>
+    <p>
+        ContextBase Python SDK is a client library that provides a simple and intuitive interface for interacting with the ContextBase MCP API. 
+        This SDK enables developers to easily integrate memory storage capabilities into their Python applications, 
+        with features like authentication, key-value operations, and semantic search functionality.
+    </p>
+
+    <h2>Technology Stack</h2>
+    <div class="tech-stack">
+        <div class="tech-item">Python</div>
+        <div class="tech-item">Requests</div>
+        <div class="tech-item">REST API</div>
+        <div class="tech-item">JSON</div>
+        <div class="tech-item">PyPI</div>
+    </div>
+
+    <h2>High-Level Architecture</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            User[Client Application] --- SDK[ContextBase SDK]
+            SDK --- API[ContextBase MCP API]
+            API --- Storage[Memory Storage]
+            
+            subgraph SDK_Components["SDK Components"]
+                Client[ContextBase Class] --- Auth[Authentication Methods]
+                Client --- MemoryOps[Memory Operations]
+                Auth --- Signup["signup()"]
+                Auth --- Login["login()"]
+                Auth --- SetToken["set_token()"]
+                MemoryOps --- Set["set()"]
+                MemoryOps --- Get["get()"]
+                MemoryOps --- List["list()"]
+                MemoryOps --- Search["search()"]
+                MemoryOps --- Delete["delete()"]
+            end
+            
+            SDK --- SDK_Components
+            
+            classDef user fill:#d1e7dd,stroke:#20c997
+            classDef sdk fill:#cfe2ff,stroke:#0d6efd
+            classDef api fill:#e2e3e5,stroke:#6c757d
+            classDef storage fill:#f8d7da,stroke:#dc3545
+            
+            class User user
+            class SDK sdk
+            class API api
+            class Storage storage
+        </div>
+    </div>
+
+    <h2>Detailed Component Architecture</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Core_SDK["Core SDK"]
+                ContextClass["ContextBase Class"] --> Constructor["__init__(base_url)"]
+                Constructor --> SetBaseUrl["Set Base URL"]
+                Constructor --> SetToken["Set Token (None)"]
+                
+                ContextClass --> AuthMethods["Authentication Methods"]
+                AuthMethods --> Signup["signup(email, password)"]
+                AuthMethods --> Login["login(email, password)"]
+                AuthMethods --> TokenSetter["set_token(token)"]
+                
+                ContextClass --> MemoryMethods["Memory Methods"]
+                MemoryMethods --> Set["set(key, value, ttl)"]
+                MemoryMethods --> Get["get(key)"]
+                MemoryMethods --> List["list()"]
+                MemoryMethods --> Search["search(query)"]
+                MemoryMethods --> Delete["delete(key)"]
+                
+                ContextClass --> HelperMethods["Helper Methods"]
+                HelperMethods --> Headers["_auth_headers()"]
+            end
+            
+            subgraph API_Endpoints["API Endpoints"]
+                Signup --> SignupEndpoint["/api/auth/signup"]
+                Login --> LoginEndpoint["/api/auth/login"]
+                Set --> SetEndpoint["/api/memory"]
+                Get --> GetEndpoint["/api/memory/{key}"]
+                List --> ListEndpoint["/api/memory"]
+                Search --> SearchEndpoint["/api/memory/search/{query}"]
+                Delete --> DeleteEndpoint["/api/memory/delete"]
+            end
+            
+            classDef core fill:#f0f7ff,stroke:#3b82f6
+            classDef endpoints fill:#f0fdf4,stroke:#22c55e
+            
+            class Core_SDK core
+            class API_Endpoints endpoints
+        </div>
+    </div>
+
+    <h2>Project Structure</h2>
+    <div class="file-structure">
+contextbase-py/
+├── contextbase/               # Source code directory
+│   ├── __init__.py            # Package initialization
+│   ├── client.py              # Main client implementation
+│   └── __pycache__/           # Python cache files
+├── dist/                      # Distribution packages
+├── build/                     # Build artifacts
+├── contextbase_py.egg-info/   # Package metadata
+├── venv/                      # Virtual environment
+├── test.py                    # Test script
+├── requirements.txt           # Dependencies
+├── setup.py                   # Package setup configuration
+├── LICENSE                    # License file
+├── README.md                  # Documentation
+└── .gitignore                 # Git ignore file
+</div>
+
+    <h2>Authentication Flow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+                participant Client as Client Application
+                participant SDK as ContextBase SDK
+                participant API as ContextBase API
+                participant DB as Memory Storage
+                
+                Client->>SDK: ContextBase(base_url)
+                Client->>SDK: signup(email, password)
+                SDK->>API: POST /api/auth/signup
+                API->>DB: Create User
+                DB->>API: User Created
+                API->>SDK: Return JWT Token
+                SDK->>SDK: Store Token Internally
+                SDK->>Client: Return Token
+                
+                Client->>SDK: login(email, password)
+                SDK->>API: POST /api/auth/login
+                API->>DB: Validate Credentials
+                DB->>API: Credentials Valid
+                API->>SDK: Return JWT Token
+                SDK->>SDK: Store Token Internally
+                SDK->>Client: Return Token
+                
+                Client->>SDK: set_token(existing_token)
+                SDK->>SDK: Store Token for Future Requests
+        </div>
+    </div>
+
+    <h2>Memory Operations Flow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart LR
+            subgraph Memory_Operations["Memory Operations"]
+                Set["set(key, value, ttl)"] --> SetReq["POST /api/memory"]
+                Get["get(key)"] --> GetReq["GET /api/memory/{key}"]
+                List["list()"] --> ListReq["GET /api/memory"]
+                Search["search(query)"] --> SearchReq["GET /api/memory/search/{query}"]
+                Delete["delete(key)"] --> DeleteReq["POST /api/memory/delete"]
+            end
+            
+            subgraph Request_Flow["Request Flow"]
+                SetReq --> Auth["Add Authorization Header"]
+                GetReq --> Auth
+                ListReq --> Auth
+                SearchReq --> Auth
+                DeleteReq --> Auth
+                
+                Auth --> Send["Send HTTP Request"]
+                Send --> Response["Process Response"]
+                Response --> Return["Return Data to Client"]
+            end
+            
+            classDef ops fill:#dbeafe,stroke:#3b82f6
+            classDef flow fill:#dcfce7,stroke:#22c55e
+            
+            class Memory_Operations ops
+            class Request_Flow flow
+        </div>
+    </div>
+
+    <h2>Detailed API Endpoints</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart LR
+            subgraph Authentication_Endpoints["Authentication Endpoints"]
+                Signup["POST /api/auth/signup"] --- SignupPayload["{ email, password }"]
+                Login["POST /api/auth/login"] --- LoginPayload["{ email, password }"]
+            end
+            
+            subgraph Memory_Endpoints["Memory Endpoints"]
+                Set["POST /api/memory"] --- SetPayload["{ key, value, ttl }"]
+                Get["GET /api/memory/{key}"] --- GetParams["key (URL parameter)"]
+                List["GET /api/memory"] --- ListParams["No parameters"]
+                Search["GET /api/memory/search/{query}"] --- SearchParams["query (URL parameter)"]
+                Delete["POST /api/memory/delete"] --- DeletePayload["{ key }"]
+            end
+            
+            subgraph Response_Format["Response Format"]
+                AuthResponse["Authentication Response"] --- Token["{ token: string }"]
+                MemoryResponse["Memory Response"] --- Data["{ success: boolean, data: any }"]
+            end
+            
+            classDef auth fill:#dbeafe,stroke:#3b82f6
+            classDef memory fill:#dcfce7,stroke:#22c55e
+            classDef response fill:#fecaca,stroke:#ef4444
+            
+            class Authentication_Endpoints auth
+            class Memory_Endpoints memory
+            class Response_Format response
+        </div>
+    </div>
+
+    <h2>Client Implementation Flow</h2>
+    <div class="diagram-container enhanced">
+        <div class="mermaid">
+            flowchart LR
+            A["Client Initialization"] --> B["Set Base URL"]
+            B --> C["Set Token to None"]
+            C --> D["Client Ready"]
+            D --> E["Auth Methods Available"]
+            D --> F["Memory Methods Available"]
+            
+            E --> G["signup()"]
+            E --> H["login()"]
+            E --> I["set_token()"]
+            
+            F --> J["set()"]
+            F --> K["get()"]
+            F --> L["list()"]
+            F --> M["search()"]
+            F --> N["delete()"]
+            
+            style A fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+            style B fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+            style E fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style F fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style G fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style H fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style I fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style J fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style K fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style L fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style M fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style N fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+        </div>
+    </div>
+
+    <h2>User Flow</h2>
+    <div class="diagram-container enhanced">
+        <div class="mermaid">
+            flowchart LR
+            A["Start"] --> B["Install SDK"]
+            B --> C["Initialize Client"]
+            C --> D["Authenticate"]
+            D --> E["Perform Memory Operations"]
+            E --> F["Handle Responses"]
+            F --> G["Continue Operations"]
+            G --> E
+            
+            style A fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+            style B fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style E fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style F fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style G fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+        </div>
+    </div>
+
+    <h2>Class Implementation</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            classDiagram
+            class ContextBase {
+                +string base_url
+                +string token
+                +__init__(base_url)
+                +set_token(token)
+                -_auth_headers()
+                +signup(email, password)
+                +login(email, password)
+                +set(key, value, ttl)
+                +get(key)
+                +delete(key)
+                +list()
+                +search(query)
+            }
+        </div>
+    </div>
+
+    <h2>Authentication Implementation</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+            participant Client as Client Code
+            participant SDK as ContextBase Class
+            participant Requests as Requests Library
+            participant API as ContextBase API
+            
+            Client->>SDK: signup(email, password)
+            SDK->>Requests: requests.post(base_url + '/api/auth/signup', json={ email, password })
+            Requests->>API: HTTP POST Request
+            API->>Requests: Response with token
+            Requests->>SDK: Response data
+            SDK->>SDK: self.token = token
+            SDK->>Client: Return token
+            
+            Client->>SDK: login(email, password)
+            SDK->>Requests: requests.post(base_url + '/api/auth/login', json={ email, password })
+            Requests->>API: HTTP POST Request
+            API->>Requests: Response with token
+            Requests->>SDK: Response data
+            SDK->>SDK: self.token = token
+            SDK->>Client: Return token
+        </div>
+    </div>
+
+    <h2>Memory Operations Implementation</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+            participant Client as Client Code
+            participant SDK as ContextBase Class
+            participant Requests as Requests Library
+            participant API as ContextBase API
+            
+            Client->>SDK: set(key, value, ttl)
+            SDK->>SDK: _auth_headers()
+            SDK->>Requests: requests.post(base_url + '/api/memory', headers=headers, json={ key, value, ttl })
+            Requests->>API: HTTP POST Request
+            API->>Requests: Response
+            Requests->>SDK: Response data
+            SDK->>Client: Return data
+            
+            Client->>SDK: get(key)
+            SDK->>SDK: _auth_headers()
+            SDK->>Requests: requests.get(base_url + '/api/memory/' + key, headers=headers)
+            Requests->>API: HTTP GET Request
+            API->>Requests: Response
+            Requests->>SDK: Response data
+            SDK->>Client: Return data
+            
+            Client->>SDK: list()
+            SDK->>SDK: _auth_headers()
+            SDK->>Requests: requests.get(base_url + '/api/memory', headers=headers)
+            Requests->>API: HTTP GET Request
+            API->>Requests: Response
+            Requests->>SDK: Response data
+            SDK->>Client: Return data
+            
+            Client->>SDK: search(query)
+            SDK->>SDK: _auth_headers()
+            SDK->>Requests: requests.get(base_url + '/api/memory/search/' + query, headers=headers)
+            Requests->>API: HTTP GET Request
+            API->>Requests: Response
+            Requests->>SDK: Response data
+            SDK->>Client: Return data
+            
+            Client->>SDK: delete(key)
+            SDK->>SDK: _auth_headers()
+            SDK->>Requests: requests.post(base_url + '/api/memory/delete', headers=headers, json={ key })
+            Requests->>API: HTTP POST Request
+            API->>Requests: Response
+            Requests->>SDK: Response data
+            SDK->>Client: Return data
+        </div>
+    </div>
+
+    <h2>Headers Implementation</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Headers_Method["Headers Method"]
+                Headers["_auth_headers() method"] --> CheckToken["Check if token exists"]
+                CheckToken --> CreateHeaders["Create headers object"]
+                CreateHeaders --> AddAuth["Add Authorization header"]
+                AddAuth --> ReturnHeaders["Return headers object"]
+            end
+            
+            subgraph Headers_Usage["Headers Usage"]
+                Set["set() method"] --> UseHeaders["Use headers in request"]
+                Get["get() method"] --> UseHeaders
+                List["list() method"] --> UseHeaders
+                Search["search() method"] --> UseHeaders
+                Delete["delete() method"] --> UseHeaders
+            end
+            
+            classDef method fill:#f0f7ff,stroke:#3b82f6
+            classDef usage fill:#f0fdf4,stroke:#22c55e
+            
+            class Headers_Method method
+            class Headers_Usage usage
+        </div>
+    </div>
+
+    <h2>State Management</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Client_State["Client State"]
+                BaseUrl["base_url: string"] --> ClientState["Client State"]
+                Token["token: string"] --> ClientState
+            end
+            
+            subgraph State_Management["State Management"]
+                Constructor["__init__()"] --> InitState["Initialize State"]
+                SetToken["set_token()"] --> UpdateToken["Update Token State"]
+                Login["login()"] --> UpdateToken
+                Signup["signup()"] --> UpdateToken
+            end
+            
+            subgraph State_Usage["State Usage"]
+                Headers["_auth_headers()"] --> UseToken["Use Token State"]
+                MemoryOps["Memory Operations"] --> UseHeaders["Use Headers Method"]
+                UseHeaders --> UseToken
+            end
+            
+            classDef state fill:#f0f7ff,stroke:#3b82f6
+            classDef management fill:#f0fdf4,stroke:#22c55e
+            classDef usage fill:#fecaca,stroke:#ef4444
+            
+            class Client_State state
+            class State_Management management
+            class State_Usage usage
+        </div>
+    </div>
+
+    <h2>Development Workflow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+            participant Developer
+            participant Git as Git Repository
+            participant Pip as Pip
+            participant PyPI as PyPI
+            participant Tests as Test Script
+            
+            Developer->>Git: Clone Repository
+            Developer->>Pip: pip install -e .
+            Pip->>Developer: Development Install
+            Developer->>Developer: Make Code Changes
+            Developer->>Tests: Run test.py
+            Tests->>Developer: Test Results
+            Developer->>Git: Commit Changes
+            Developer->>PyPI: Build and Upload Package
+        </div>
+    </div>
+
+    <h2>Future Enhancements</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Planned_Features["Planned Features"]
+                BatchOps[Batch Operations] --> BatchSet[Batch Set]
+                BatchOps --> BatchGet[Batch Get]
+                BatchOps --> BatchDelete[Batch Delete]
+                
+                AdvancedSearch[Advanced Search] --> Filtering[Filtering]
+                AdvancedSearch --> Sorting[Sorting]
+                AdvancedSearch --> Pagination[Pagination]
+                
+                ErrorHandling[Error Handling] --> RetryLogic[Retry Logic]
+                ErrorHandling --> DetailedErrors[Detailed Error Messages]
+                ErrorHandling --> ErrorCallbacks[Error Callbacks]
+                
+                AsyncSupport[Async Support] --> AsyncIO[AsyncIO Integration]
+                AsyncSupport --> AsyncMethods[Async Methods]
+                AsyncSupport --> AsyncContextManager[Async Context Manager]
+            end
+            
+            classDef future fill:#f0f7ff,stroke:#3b82f6
+            
+            class Planned_Features future
+        </div>
+    </div>
+
+    <h2>Getting Started</h2>
+    <p>To use the ContextBase Python SDK in your project:</p>
+    <ol>
+        <li>Install the package:
+            <ul>
+                <li>Run <code>pip install contextbase-py</code> to install the SDK</li>
+            </ul>
+        </li>
+        <li>Initialize the client:
+            <ul>
+                <li>Import the SDK: <code>from contextbase.client import ContextBase</code></li>
+                <li>Create a new client instance: <code>ctx = ContextBase('https://contextbase.onrender.com')</code></li>
+            </ul>
+        </li>
+        <li>Authenticate:
+            <ul>
+                <li>Sign up: <code>token = ctx.signup('user@example.com', 'password')</code></li>
+                <li>Or log in: <code>token = ctx.login('user@example.com', 'password')</code></li>
+                <li>Or set an existing token: <code>ctx.set_token('your-auth-token')</code></li>
+            </ul>
+        </li>
+        <li>Perform memory operations:
+            <ul>
+                <li>Store a memory: <code>ctx.set('myKey', 'myValue', 3600)</code></li>
+                <li>Retrieve a memory: <code>memory = ctx.get('myKey')</code></li>
+                <li>List all memories: <code>all_memories = ctx.list()</code></li>
+                <li>Search memories: <code>results = ctx.search('queryString')</code></li>
+                <li>Delete a memory: <code>ctx.delete('myKey')</code></li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Conclusion</h2>
+    <p>
+        The ContextBase Python SDK provides a clean and intuitive interface for interacting with the ContextBase MCP API. 
+        With its simple authentication flow and straightforward memory operations, the SDK makes it easy to integrate memory storage capabilities into any Python application.
+    </p>
+    <p>
+        The SDK's architecture leverages the Requests library for HTTP requests and follows Python best practices, providing a robust and reliable foundation for building applications that require persistent memory storage.
+    </p>
+
+    <footer style="margin-top: 50px; text-align: center; color: #6c757d; font-size: 0.9em;">
+        <p>Created on April, 2025</p>
+    </footer>
+
+    <script>
+        // Initialize all mermaid diagrams
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    </script>
+</body>
+</html>

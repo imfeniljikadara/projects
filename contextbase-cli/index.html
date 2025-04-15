@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContextBase CLI - Project Overview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        h1 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #1e40af;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        h3 {
+            color: #3b82f6;
+            margin-top: 30px;
+        }
+        .diagram-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+        /* Enhanced styling for diagrams */
+        .diagram-container.enhanced {
+            padding: 40px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+        .diagram {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        .component-box {
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f0f7ff;
+        }
+        .file-structure {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .tech-item {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .flow-diagram {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .mermaid {
+            margin: 0 auto;
+            overflow: auto;
+            font-size: 18px;
+        }
+        /* Enhanced styling for diagrams */
+        .diagram-container.enhanced {
+            padding: 40px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({ 
+                startOnLoad: true,
+                theme: 'default',
+                securityLevel: 'loose',
+                flowchart: { 
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'linear',
+                    nodeSpacing: 80,
+                    rankSpacing: 100
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>ContextBase CLI - Project Overview</h1>
+        <p>A powerful Command Line Interface for interacting with the ContextBase MCP API</p>
+        <div class="project-links" style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+            <a href="https://github.com/imfeniljikadara/contextbase-cli" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 30px; height: 30px; margin-right: 8px;">
+                <span>GitHub Repository</span>
+            </a>
+            <a href="https://www.npmjs.com/package/contextbase-cli" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; text-decoration: none; color: #333;">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-npm-3-1175132.png" alt="NPM Logo" style="width: 30px; height: 30px; margin-right: 8px;">
+                <span>NPM Package</span>
+            </a>
+        </div>
+    </header>
+
+    <h2>Project Description</h2>
+    <p>
+        ContextBase CLI is a command-line tool that provides a simple and efficient way to interact with the ContextBase MCP API. 
+        It allows users to manage their memory keys through straightforward commands, including storing, retrieving, searching, and managing data.
+        The CLI offers a convenient interface for developers who prefer working in terminal environments.
+    </p>
+
+    <h2>Technology Stack</h2>
+    <div class="tech-stack">
+        <div class="tech-item">TypeScript</div>
+        <div class="tech-item">Node.js</div>
+        <div class="tech-item">Commander.js</div>
+        <div class="tech-item">Axios</div>
+        <div class="tech-item">Conf</div>
+        <div class="tech-item">npm</div>
+    </div>
+
+    <h2>High-Level Architecture</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            User[Terminal User] --- CLI[ContextBase CLI]
+            CLI --- API[ContextBase MCP API]
+            API --- Storage[Memory Storage]
+            
+            subgraph CLI_Components["CLI Components"]
+                Entry["Entry Point"] --- CommandParser["Command Parser"]
+                CommandParser --- Commands["Commands"]
+                Commands --- AuthCommands["Authentication Commands"]
+                Commands --- MemoryCommands["Memory Commands"]
+                AuthCommands --- Signup["signup"]
+                AuthCommands --- Login["login"]
+                AuthCommands --- Logout["logout"]
+                MemoryCommands --- Set["set"]
+                MemoryCommands --- Get["get"]
+                MemoryCommands --- List["list"]
+                MemoryCommands --- Search["search"]
+                MemoryCommands --- Delete["delete"]
+            end
+            
+            CLI --- CLI_Components
+            
+            classDef user fill:#d1e7dd,stroke:#20c997
+            classDef cli fill:#cfe2ff,stroke:#0d6efd
+            classDef api fill:#e2e3e5,stroke:#6c757d
+            classDef storage fill:#f8d7da,stroke:#dc3545
+            
+            class User user
+            class CLI cli
+            class API api
+            class Storage storage
+        </div>
+    </div>
+
+    <h2>Detailed Component Architecture</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Core_CLI["Core CLI"]
+                EntryPoint["bin/contextbase.ts"] --> CommanderSetup["Commander.js Setup"]
+                CommanderSetup --> RegisterCommands["Register Commands"]
+                RegisterCommands --> AuthCommands["Authentication Commands"]
+                RegisterCommands --> MemoryCommands["Memory Operations"]
+                
+                AuthCommands --> SignupCommand["signup Command"]
+                AuthCommands --> LoginCommand["login Command"]
+                AuthCommands --> LogoutCommand["logout Command"]
+                
+                MemoryCommands --> SetCommand["set Command"]
+                MemoryCommands --> GetCommand["get Command"]
+                MemoryCommands --> ListCommand["list Command"]
+                MemoryCommands --> SearchCommand["search Command"]
+                MemoryCommands --> DeleteCommand["delete Command"]
+            end
+            
+            subgraph Support_Modules["Support Modules"]
+                API["api.ts"] --> AxiosInstance["Axios Instance"]
+                API --> Interceptors["Request Interceptors"]
+                Config["config.ts"] --> TokenStorage["Token Storage"]
+                TokenStorage --> SetToken["setToken()"]
+                TokenStorage --> GetToken["getToken()"]
+                TokenStorage --> ClearToken["clearToken()"]
+            end
+            
+            EntryPoint --> API
+            CommandImplementations --> API
+            CommandImplementations --> Config
+            
+            classDef core fill:#f0f7ff,stroke:#3b82f6
+            classDef support fill:#f0fdf4,stroke:#22c55e
+            
+            class Core_CLI core
+            class Support_Modules support
+        </div>
+    </div>
+
+    <h2>Project Structure</h2>
+    <div class="file-structure">
+contextbase-cli/
+├── dist/                      # Compiled JavaScript files
+├── node_modules/              # Dependencies
+├── src/                       # Source code
+│   ├── bin/                   # CLI entry point
+│   │   └── contextbase.ts     # Main CLI script
+│   ├── commands/              # Command implementations
+│   │   ├── delete.ts          # Delete command
+│   │   ├── get.ts             # Get command
+│   │   ├── list.ts            # List command
+│   │   ├── login.ts           # Login command
+│   │   ├── logout.ts          # Logout command
+│   │   ├── search.ts          # Search command
+│   │   ├── set.ts             # Set command
+│   │   └── signup.ts          # Signup command
+│   ├── api.ts                 # API client
+│   └── config.ts              # Configuration and token management
+├── .gitignore                 # Git ignore file
+├── LICENSE                    # License file
+├── README.md                  # Documentation
+├── package.json               # Package metadata and dependencies
+├── package-lock.json          # Dependency lock file
+└── tsconfig.json              # TypeScript configuration
+</div>
+
+    <h2>Command Flow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+                participant User as Terminal User
+                participant CLI as ContextBase CLI
+                participant Commander as Commander.js
+                participant Command as Command Module
+                participant API as API Client
+                participant Backend as ContextBase API
+                
+                User->>CLI: Run command (e.g., contextbase set key value)
+                CLI->>Commander: Parse command and options
+                Commander->>Command: Execute command handler
+                Command->>API: Make API request
+                API->>Backend: Send HTTP request
+                Backend->>API: Return response
+                API->>Command: Process response
+                Command->>User: Display result
+        </div>
+    </div>
+
+    <h2>Authentication Flow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+                participant User as Terminal User
+                participant CLI as ContextBase CLI
+                participant Config as Config Module
+                participant API as API Client
+                participant Backend as ContextBase API
+                
+                User->>CLI: contextbase login email password
+                CLI->>API: POST /api/auth/login
+                API->>Backend: Send credentials
+                Backend->>API: Return JWT token
+                API->>Config: Store token locally
+                Config->>User: Display success message
+                
+                Note over User,Backend: For subsequent operations
+                User->>CLI: contextbase get key
+                CLI->>API: Prepare request
+                API->>Config: Get stored token
+                Config->>API: Return token
+                API->>Backend: Send authenticated request
+                Backend->>API: Return data
+                API->>User: Display result
+        </div>
+    </div>
+
+    <h2>Command Structure</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart LR
+            subgraph Authentication_Commands["Authentication Commands"]
+                Signup["signup email password"] --- SignupDesc["Create new account"]
+                Login["login email password"] --- LoginDesc["Authenticate user"]
+                Logout["logout"] --- LogoutDesc["Clear stored token"]
+            end
+            
+            subgraph Memory_Commands["Memory Commands"]
+                Set["set key value [--ttl]"] --- SetDesc["Store key-value pair"]
+                Get["get key [--json]"] --- GetDesc["Retrieve value by key"]
+                List["list [--json]"] --- ListDesc["List all memory keys"]
+                Search["search query [--json]"] --- SearchDesc["Search for keys"]
+                Delete["delete key"] --- DeleteDesc["Remove a key"]
+            end
+            
+            classDef auth fill:#dbeafe,stroke:#3b82f6
+            classDef memory fill:#dcfce7,stroke:#22c55e
+            
+            class Authentication_Commands auth
+            class Memory_Commands memory
+        </div>
+    </div>
+
+    <h2>API Integration</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph API_Module["API Module (api.ts)"]
+                AxiosCreate["Create Axios Instance"] --> BaseURL["Set Base URL"]
+                BaseURL --> Headers["Set Default Headers"]
+                Headers --> Interceptor["Add Request Interceptor"]
+                Interceptor --> GetToken["Get Token from Config"]
+                GetToken --> AddAuth["Add Authorization Header"]
+            end
+            
+            subgraph API_Usage["API Usage in Commands"]
+                LoginCmd["login.ts"] --> PostLogin["api.post('/api/auth/login')"]
+                SignupCmd["signup.ts"] --> PostSignup["api.post('/api/auth/signup')"]
+                SetCmd["set.ts"] --> PostMemory["api.post('/api/memory')"]
+                GetCmd["get.ts"] --> GetMemory["api.get('/api/memory/{key}')"]
+                ListCmd["list.ts"] --> GetAllMemory["api.get('/api/memory')"]
+                SearchCmd["search.ts"] --> GetSearch["api.get('/api/memory/search/{query}')"]
+                DeleteCmd["delete.ts"] --> PostDelete["api.post('/api/memory/delete')"]
+            end
+            
+            API_Module --> API_Usage
+            
+            classDef module fill:#f0f7ff,stroke:#3b82f6
+            classDef usage fill:#f0fdf4,stroke:#22c55e
+            
+            class API_Module module
+            class API_Usage usage
+        </div>
+    </div>
+
+    <h2>Configuration Management</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Config_Module["Config Module (config.ts)"]
+                ConfSetup["Create Conf Instance"] --> ProjectName["Set Project Name"]
+                ProjectName --> TokenFunctions["Token Management Functions"]
+                TokenFunctions --> SetToken["setToken()"]
+                TokenFunctions --> GetToken["getToken()"]
+                TokenFunctions --> ClearToken["clearToken()"]
+            end
+            
+            subgraph Config_Usage["Config Usage"]
+                Login["login.ts"] --> UseSetToken["setToken()"]
+                Signup["signup.ts"] --> UseSetToken
+                Logout["logout.ts"] --> UseClearToken["clearToken()"]
+                API["api.ts"] --> UseGetToken["getToken()"]
+            end
+            
+            Config_Module --> Config_Usage
+            
+            classDef module fill:#f0f7ff,stroke:#3b82f6
+            classDef usage fill:#f0fdf4,stroke:#22c55e
+            
+            class Config_Module module
+            class Config_Usage usage
+        </div>
+    </div>
+
+    <h2>Command Implementation Flow</h2>
+    <div class="diagram-container enhanced">
+        <div class="mermaid">
+            flowchart LR
+            A["Command Definition"] --> B["Parse Arguments"]
+            B --> C["Validate Input"]
+            C --> D["Call API"]
+            D --> E["Process Response"]
+            E --> F["Format Output"]
+            F --> G["Display Result"]
+            
+            style A fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+            style B fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style E fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style F fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style G fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+        </div>
+    </div>
+
+    <h2>User Flow</h2>
+    <div class="diagram-container enhanced">
+        <div class="mermaid">
+            flowchart LR
+            A["Install CLI"] --> B["Authenticate"]
+            B --> C["Perform Operations"]
+            C --> D["View Results"]
+            D --> E["Continue Operations"]
+            E --> C
+            
+            style A fill:#d4f4e2,stroke:#34d399,stroke-width:3px,color:#065f46,font-weight:bold
+            style B fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style E fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+        </div>
+    </div>
+
+    <h2>Commander.js Integration</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Commander_Setup["Commander.js Setup"]
+                Initialize["Initialize Commander"] --> SetMetadata["Set CLI Metadata"]
+                SetMetadata --> RegisterCommands["Register Commands"]
+                RegisterCommands --> DefineArguments["Define Command Arguments"]
+                DefineArguments --> DefineOptions["Define Command Options"]
+                DefineOptions --> SetHandlers["Set Command Handlers"]
+                SetHandlers --> ParseArgs["Parse Command Line Args"]
+            end
+            
+            subgraph Command_Definition["Command Definition Example"]
+                Command["program.command('set')"] --> Argument1["argument('key')"]
+                Argument1 --> Argument2["argument('value')"]
+                Argument2 --> Option["option('--ttl seconds')"]
+                Option --> Description["description('Set a memory key')"]
+                Description --> Action["action(setMemory)"]
+            end
+            
+            Commander_Setup --- Command_Definition
+            
+            classDef setup fill:#f0f7ff,stroke:#3b82f6
+            classDef definition fill:#f0fdf4,stroke:#22c55e
+            
+            class Commander_Setup setup
+            class Command_Definition definition
+        </div>
+    </div>
+
+    <h2>Development Workflow</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            sequenceDiagram
+            participant Developer
+            participant Git as Git Repository
+            participant NPM as npm
+            participant TypeScript as TypeScript Compiler
+            participant CLI as CLI Binary
+            
+            Developer->>Git: Clone Repository
+            Developer->>NPM: npm install
+            NPM->>Developer: Dependencies Installed
+            Developer->>Developer: Make Code Changes
+            Developer->>TypeScript: npm run build
+            TypeScript->>Developer: Compiled JavaScript
+            Developer->>NPM: npm link
+            NPM->>CLI: Create Global Link
+            Developer->>CLI: Test Commands
+            Developer->>Git: Commit Changes
+            Developer->>NPM: npm publish
+        </div>
+    </div>
+
+    <h2>Future Enhancements</h2>
+    <div class="diagram-container">
+        <div class="mermaid">
+            flowchart TD
+            subgraph Planned_Features["Planned Features"]
+                Interactive[Interactive Mode] --> REPL[REPL Interface]
+                Interactive --> Autocomplete[Command Autocomplete]
+                
+                Output[Enhanced Output] --> ColorOutput[Colorized Output]
+                Output --> TableOutput[Tabular Data Display]
+                Output --> Formatting[Advanced Formatting]
+                
+                Config[Configuration] --> Profiles[Multiple Profiles]
+                Config --> Endpoints[Custom Endpoints]
+                Config --> DefaultOptions[Default Command Options]
+                
+                Scripting[Scripting Support] --> BatchCommands[Batch Command Execution]
+                Scripting --> Pipelines[Command Pipelines]
+                Scripting --> Automation[Automation Scripts]
+            end
+            
+            classDef future fill:#f0f7ff,stroke:#3b82f6
+            
+            class Planned_Features future
+        </div>
+    </div>
+
+    <h2>Getting Started</h2>
+    <p>To use the ContextBase CLI:</p>
+    <ol>
+        <li>Install the CLI:
+            <ul>
+                <li>Run <code>npm install -g contextbase-cli</code> to install globally</li>
+                <li>Or use with npx: <code>npx contextbase-cli &lt;command&gt;</code></li>
+            </ul>
+        </li>
+        <li>Authenticate:
+            <ul>
+                <li>Sign up: <code>contextbase signup &lt;email&gt; &lt;password&gt;</code></li>
+                <li>Or log in: <code>contextbase login &lt;email&gt; &lt;password&gt;</code></li>
+            </ul>
+        </li>
+        <li>Perform operations:
+            <ul>
+                <li>Set a memory: <code>contextbase set &lt;key&gt; &lt;value&gt; [--ttl &lt;seconds&gt;]</code></li>
+                <li>Get a memory: <code>contextbase get &lt;key&gt; [--json]</code></li>
+                <li>List all memories: <code>contextbase list [--json]</code></li>
+                <li>Search memories: <code>contextbase search &lt;query&gt; [--json]</code></li>
+                <li>Delete a memory: <code>contextbase delete &lt;key&gt;</code></li>
+                <li>Log out: <code>contextbase logout</code></li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Conclusion</h2>
+    <p>
+        The ContextBase CLI provides a powerful and efficient way to interact with the ContextBase MCP API directly from the terminal.
+        With its intuitive command structure and straightforward implementation, it offers developers a convenient tool for managing memory storage
+        without the need for a graphical interface or custom code.
+    </p>
+    <p>
+        The CLI's architecture leverages Commander.js for command parsing, Axios for API requests, and Conf for local configuration storage,
+        creating a robust foundation for terminal-based interactions with the ContextBase service.
+    </p>
+
+    <footer style="margin-top: 50px; text-align: center; color: #6c757d; font-size: 0.9em;">
+        <p>Created on April, 2025</p>
+    </footer>
+
+    <script>
+        // Initialize all mermaid diagrams
+        mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    </script>
+</body>
+</html>
