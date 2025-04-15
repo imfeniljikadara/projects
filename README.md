@@ -45,14 +45,15 @@ A comprehensive ecosystem for managing per-user context for AI applications, con
 ContextBase is designed to store, retrieve, and manage per-user context for AI applications. It provides a simple API for AI agents and assistants to maintain user-specific context across interactions.
 
 - **Key Features**:
-  - 🔐 Authentication System: Secure user authentication using JWT tokens and bcrypt password hashing
-  - 🧠 Memory Management: Efficient storage and retrieval of context data
-  - 📊 Logging System: Comprehensive logging of user actions
-  - 🚀 Modern Tech Stack: Built with cutting-edge technologies
-  - 💾 Database Integration: PostgreSQL for reliable, persistent storage
-  - ⚡ Caching: Redis for lightning-fast in-memory caching
+  - Authentication System: Secure user authentication using JWT tokens and bcrypt password hashing
+  - Memory Management: Efficient storage and retrieval of context data
+  - Logging System: Comprehensive logging of user actions
+  - Modern Tech Stack: Built with cutting-edge technologies
+  - Database Integration: PostgreSQL for reliable, persistent storage
+  - Caching: Redis for lightning-fast in-memory caching
 - **Links**:
   - [GitHub Repository](https://github.com/imfeniljikadara/contextbase.git)
+  - [Live Server](https://contextbase.onrender.com)
 
 #### ContextBase TypeScript SDK
 **TypeScript Client Library for ContextBase**
@@ -61,7 +62,9 @@ A client library that provides a simple and intuitive interface for interacting 
 
 - **Key Features**: Authentication, key-value operations, semantic search functionality
 - **Installation**: `npm install contextbase-ts`
-- **Links**: Not specified in the overview
+- **Links**: 
+  - [GitHub Repository](https://github.com/imfeniljikadara/contextbase-ts.git)
+  - [NPM Package](https://www.npmjs.com/package/contextbase-ts)
 
 #### ContextBase Python SDK
 **Python Client Library for ContextBase**
@@ -84,6 +87,7 @@ A command-line tool that provides a simple and efficient way to interact with th
 - **Links**:
   - [GitHub Repository](https://github.com/imfeniljikadara/contextbase-cli)
   - [NPM Package](https://www.npmjs.com/package/contextbase-cli)
+
 
 ---
 *Last Updated: April 15, 2025*
