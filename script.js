@@ -3,6 +3,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
     const navbar = document.querySelector('nav');
+    const nameElement = document.querySelector('.hero h1');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Mobile navigation functionality
+    function setupMobileNav() {
+        // Create mobile nav toggle button
+        const mobileNavToggle = document.createElement('button');
+        mobileNavToggle.className = 'mobile-nav-toggle';
+        mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileNavToggle.setAttribute('aria-label', 'Toggle navigation menu');
+        
+        // Create a container for the toggle buttons on the right side
+        const toggleContainer = document.createElement('div');
+        toggleContainer.className = 'toggle-container';
+        
+        // Move the theme toggle into the container
+        const parentNode = themeToggle.parentNode;
+        parentNode.removeChild(themeToggle);
+        toggleContainer.appendChild(themeToggle);
+        toggleContainer.appendChild(mobileNavToggle);
+        
+        // Add the container to the navbar
+        navbar.appendChild(toggleContainer);
+        
+        // Hide nav links by default on mobile
+        if (window.innerWidth <= 768) {
+            navLinks.style.display = 'none';
+        }
+        
+        // Toggle nav links visibility
+        mobileNavToggle.addEventListener('click', function() {
+            if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+                navLinks.style.display = 'flex';
+                document.body.classList.add('nav-open');
+                mobileNavToggle.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                navLinks.style.display = 'none';
+                document.body.classList.remove('nav-open');
+                mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                    document.body.classList.remove('nav-open');
+                    mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Adjust display on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                document.body.classList.remove('nav-open');
+            } else if (navLinks.style.display !== 'flex') {
+                navLinks.style.display = 'none';
+                document.body.classList.remove('nav-open');
+            }
+        });
+    }
+    
+    setupMobileNav();
     
     // Add screen reader only class if not present
     if (!document.querySelector('.sr-only')) {
