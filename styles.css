@@ -3,53 +3,76 @@
    Minimal, framed layout: Inter, hairline rules, 8px radii, one accent.
    ========================================================================== */
 
-:root {
-    --bg: #f6f6f5;
-    --surface: #ffffff;
-    --surface-soft: #fafaf9;
-    --heading: #101011;
-    --body: #5c5c5f;
-    --caption: #8b8b8f;
-    --line: #e9e9e6;
-    --line-strong: #d8d8d3;
-    --chip: #f4f4f2;
-    --accent: #1f5eff;
-    --accent-warm: #d95f24;
-    --card: #ffffff;
-    --card-shadow: 0 1px 2px rgba(16, 16, 17, 0.04), 0 12px 28px -18px rgba(16, 16, 17, 0.28);
-    --card-shadow-hover: 0 1px 2px rgba(16, 16, 17, 0.05), 0 22px 44px -22px rgba(16, 16, 17, 0.34);
-    --wash: radial-gradient(88% 84% at 52% 100%, #ffe0b8 0%, #f3e2c6 22%, #dbe9fb 48%, #eaf3ff 74%, #fbfdff 100%);
-    --btn: #101011;
-    --btn-text: #ffffff;
-    --btn-hover: #2c2c2e;
+/* Design tokens mirror rocket.new: same greys, saffron accent, radii, and Inter setup. */
 
-    --frame: 1200px;
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    ascent-override: 90.44%;
+    descent-override: 22.52%;
+    line-gap-override: 0%;
+    size-adjust: 107.12%;
+}
+
+:root {
+    /* black scale */
+    --black-1000: #1e1c1a;
+    --black-900: #38342f;
+    --black-800: #5a5650;
+    --black-700: #827d76;
+    --black-600: #a8a39c;
+    --black-500: #cac6bf;
+    --black-400: #dedbd5;
+    --black-300: #e8e6e2;
+    --black-200: #f7f5f1;
+    --black-100: #fdfcfb;
+
+    --bg: var(--black-200);
+    --surface: var(--black-200);
+    --surface-soft: var(--black-100);
+    --heading: var(--black-1000);
+    --body: var(--black-700);
+    --caption: var(--black-600);
+    --line: var(--black-400);
+    --line-strong: var(--black-500);
+    --chip: #ffffff;
+    --accent: #0057e6;
+    --accent-warm: #eb5e28;
+    --card: #ffffff;
+    --card-shadow: 0 1px 2px rgba(30, 28, 26, 0.04), 0 12px 28px -18px rgba(30, 28, 26, 0.22);
+    --card-shadow-hover: 0 1px 2px rgba(30, 28, 26, 0.05), 0 22px 44px -22px rgba(30, 28, 26, 0.28);
+    --wash: radial-gradient(84% 84% at 52% 100%, #ffb451 0%, #efc680 25%, #b4d8ff 48%, #d2e8ff 75%, #fafdff 100%);
+    --btn: var(--black-900);
+    --btn-text: #ffffff;
+    --btn-hover: var(--black-1000);
+
+    --frame: 1264px;
     --pad-x: 48px;
-    --pad-y: 88px;
+    --pad-y: 100px;
     --header-h: 57px;
     --radius: 8px;
-    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body.dark-theme {
-    --bg: #08080a;
-    --surface: #0e0e10;
-    --surface-soft: #141416;
-    --heading: #f4f4f5;
-    --body: #a2a2a8;
-    --caption: #77777d;
-    --line: #1e1e22;
-    --line-strong: #2b2b31;
-    --chip: #17171a;
-    --accent: #7ea3ff;
+    --bg: #2a2825;
+    --surface: var(--black-1000);
+    --surface-soft: #2a2825;
+    --heading: #ffffff;
+    --body: var(--black-500);
+    --caption: var(--black-500);
+    --line: var(--black-800);
+    --line-strong: var(--black-700);
+    --chip: #2a2825;
+    --accent: #669af0;
     --accent-warm: #f0894a;
-    --card: #141417;
+    --card: #2a2825;
     --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     --card-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 44px -26px rgba(0, 0, 0, 0.8);
-    --wash: radial-gradient(88% 84% at 52% 100%, #2a2118 0%, #1d1c1a 26%, #16191f 52%, #101114 78%, #0e0e10 100%);
-    --btn: #f4f4f5;
-    --btn-text: #0b0b0d;
-    --btn-hover: #dededf;
+    --wash: radial-gradient(84% 84% at 52% 100%, #3a2f22 0%, #2f2a24 25%, #23262c 48%, #1e2026 75%, #1e1c1a 100%);
+    --btn: var(--black-400);
+    --btn-text: var(--black-1000);
+    --btn-hover: var(--black-200);
 }
 
 *,
@@ -67,13 +90,14 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
+    font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
     color: var(--body);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
     transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 
@@ -94,8 +118,8 @@ h3,
 h4 {
     color: var(--heading);
     font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: normal;
+    line-height: 120%;
 }
 
 strong {
@@ -238,8 +262,9 @@ nav {
     justify-content: center;
     gap: 7px;
     height: 40px;
-    padding: 0 16px;
+    padding: 0 12px;
     font-size: 14px;
+    line-height: 150%;
     font-weight: 500;
     font-family: inherit;
     border-radius: var(--radius);
@@ -274,8 +299,9 @@ nav {
 
 .btn-sm {
     height: 32px;
-    padding: 0 12px;
-    font-size: 12.5px;
+    padding: 0 10px;
+    font-size: 12px;
+    border-radius: 6px;
 }
 
 .icon-btn {
@@ -320,45 +346,13 @@ nav {
     overflow: hidden;
 }
 
-.hero-bg,
-.hero-veil {
+/* The hero photograph is used exactly as supplied — no tint, filter, or overlay. */
+
+.hero-bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
-}
-
-.hero-bg {
-    background: url('hero-bg.svg') center 58% / cover no-repeat;
-}
-
-.hero-veil {
-    background:
-        linear-gradient(to right,
-            rgba(255, 255, 255, 0.62) 0%,
-            rgba(255, 255, 255, 0.22) 42%,
-            rgba(255, 255, 255, 0) 70%),
-        linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.3) 0%,
-            rgba(255, 255, 255, 0.06) 34%,
-            rgba(255, 255, 255, 0.4) 76%,
-            var(--surface) 100%);
-}
-
-body.dark-theme .hero-bg {
-    filter: saturate(0.62) brightness(0.5);
-}
-
-body.dark-theme .hero-veil {
-    background:
-        linear-gradient(to right,
-            rgba(8, 8, 10, 0.62) 0%,
-            rgba(8, 8, 10, 0.3) 45%,
-            rgba(8, 8, 10, 0) 72%),
-        linear-gradient(to bottom,
-            rgba(8, 8, 10, 0.5) 0%,
-            rgba(8, 8, 10, 0.38) 34%,
-            rgba(8, 8, 10, 0.74) 76%,
-            var(--surface) 100%);
+    background: url('Image.png') center center / cover no-repeat;
 }
 
 .hero .frame {
@@ -372,44 +366,64 @@ body.dark-theme .hero-veil {
     justify-content: center;
 }
 
+/* Hero sits on a light photograph in both themes, so its text keeps the light-mode ink. */
+
 .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     align-self: flex-start;
-    font-size: 13px;
-    color: var(--heading);
-    background: color-mix(in srgb, var(--surface) 70%, transparent);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 5px 12px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--black-1000);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 8px;
+    padding: 4px 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .hero-eyebrow i {
-    font-size: 14px;
-    color: var(--caption);
+    font-size: 15px;
+    color: var(--black-800);
 }
 
 .hero h1 {
     margin-top: 24px;
-    font-size: clamp(38px, 5.4vw, 56px);
+    font-size: 48px;
+    line-height: 120%;
     font-weight: 700;
-    letter-spacing: -0.035em;
+    color: var(--black-1000);
 }
 
 .hero .subtitle {
     margin-top: 16px;
-    max-width: 620px;
-    font-size: 17px;
-    line-height: 1.55;
-    color: var(--heading);
-    font-weight: 400;
+    max-width: 576px;
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    color: var(--black-1000);
 }
 
 .hero .subtitle span {
-    color: var(--body);
+    color: var(--black-800);
+}
+
+body.dark-theme .hero .btn-ghost {
+    background: #ffffff;
+    color: var(--black-1000);
+    border-color: transparent;
+}
+
+body.dark-theme .hero .icon-btn {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(30, 28, 26, 0.12);
+    color: var(--black-900);
+}
+
+body.dark-theme .hero .btn-primary {
+    background: var(--black-900);
+    color: #ffffff;
 }
 
 .hero-actions {
@@ -425,9 +439,9 @@ body.dark-theme .hero-veil {
    -------------------------------------------------------------------------- */
 
 .eyebrow {
-    font-size: 11.5px;
+    font-size: 12px;
+    line-height: 150%;
     font-weight: 500;
-    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent-warm);
 }
@@ -464,13 +478,17 @@ body.dark-theme .hero-veil {
 }
 
 .section-title {
-    font-size: clamp(26px, 3.2vw, 34px);
+    margin-top: 12px;
+    font-size: 40px;
+    line-height: 120%;
+    font-weight: 600;
 }
 
 .section-note {
-    font-size: 14px;
-    color: var(--caption);
-    max-width: 340px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--body);
+    max-width: 372px;
 }
 
 /* Stats strip */
@@ -509,8 +527,8 @@ body.dark-theme .hero-veil {
    -------------------------------------------------------------------------- */
 
 .about-text {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 150%;
     color: var(--heading);
     font-weight: 400;
     max-width: 760px;
@@ -613,7 +631,8 @@ body.dark-theme .hero-veil {
 }
 
 .exp-body h3 {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 150%;
     font-weight: 600;
 }
 
@@ -628,8 +647,8 @@ body.dark-theme .hero-veil {
 .exp-details li {
     position: relative;
     padding-left: 18px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .exp-details li::before {
@@ -652,11 +671,12 @@ body.dark-theme .hero-veil {
 
 .tag {
     font-size: 12px;
-    line-height: 1.5;
-    color: var(--body);
+    line-height: 150%;
+    font-weight: 500;
+    color: var(--heading);
     background: var(--chip);
-    border-radius: 6px;
-    padding: 3px 9px;
+    border-radius: 999px;
+    padding: 4px 12px;
     white-space: nowrap;
 }
 
@@ -673,7 +693,7 @@ body.dark-theme .hero-veil {
 .project-item {
     display: flex;
     flex-direction: column;
-    padding: 28px;
+    padding: 32px;
 }
 
 .project-header {
@@ -684,7 +704,8 @@ body.dark-theme .hero-veil {
 }
 
 .project-header h3 {
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 140%;
     font-weight: 600;
 }
 
@@ -696,8 +717,8 @@ body.dark-theme .hero-veil {
 
 .project-description {
     margin-top: 10px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .project-details {
@@ -712,8 +733,8 @@ body.dark-theme .hero-veil {
 .project-details li {
     position: relative;
     padding-left: 18px;
-    font-size: 13.5px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 150%;
     color: var(--body);
 }
 
@@ -811,8 +832,8 @@ body.dark-theme .hero-veil {
 .lead-details li {
     position: relative;
     padding-left: 18px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .contrib-details li::before,
@@ -838,9 +859,9 @@ body.dark-theme .hero-veil {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    padding: 26px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    padding: 32px;
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .achievements-list i {
@@ -861,13 +882,15 @@ body.dark-theme .hero-veil {
 }
 
 .contact h2 {
-    font-size: clamp(26px, 3.4vw, 36px);
+    font-size: 40px;
+    line-height: 120%;
     max-width: 620px;
 }
 
 .contact p {
     max-width: 520px;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 150%;
 }
 
 footer .frame {
@@ -1039,6 +1062,19 @@ footer p {
         min-height: 440px;
         padding-top: 72px;
         padding-bottom: 72px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero .subtitle {
+        font-size: 16px;
+    }
+
+    .section-title,
+    .contact h2 {
+        font-size: 30px;
     }
 
     .hero-actions .btn {
