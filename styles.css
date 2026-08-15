@@ -36,12 +36,24 @@
     --line: var(--black-400);
     --line-strong: var(--black-500);
     --chip: #ffffff;
-    --accent: #0057e6;
-    --accent-warm: #eb5e28;
+
+    /* Accents sampled from the hero photograph: dusk violet, meadow magenta,
+       sunrise cream. One family, used everywhere. */
+    --accent: #6a4e9c;
+    --accent-warm: #b8578a;
+    --violet-soft: #ded4ee;
+    --pink-soft: #f2dbe4;
+    --cream-soft: #f9e3cd;
+
     --card: #ffffff;
-    --card-shadow: 0 1px 2px rgba(30, 28, 26, 0.04), 0 12px 28px -18px rgba(30, 28, 26, 0.22);
-    --card-shadow-hover: 0 1px 2px rgba(30, 28, 26, 0.05), 0 22px 44px -22px rgba(30, 28, 26, 0.28);
-    --wash: radial-gradient(84% 84% at 52% 100%, #ffb451 0%, #efc680 25%, #b4d8ff 48%, #d2e8ff 75%, #fafdff 100%);
+    --card-shadow: 0 1px 2px rgba(30, 28, 26, 0.04), 0 12px 28px -18px rgba(56, 40, 82, 0.22);
+    --card-shadow-hover: 0 1px 2px rgba(30, 28, 26, 0.05), 0 22px 44px -22px rgba(56, 40, 82, 0.3);
+    --wash: radial-gradient(84% 84% at 52% 100%,
+            var(--cream-soft) 0%,
+            var(--pink-soft) 24%,
+            var(--violet-soft) 50%,
+            #e8e6f6 74%,
+            #fbfafd 100%);
     --btn: var(--black-900);
     --btn-text: #ffffff;
     --btn-hover: var(--black-1000);
@@ -64,12 +76,20 @@ body.dark-theme {
     --line: var(--black-800);
     --line-strong: var(--black-700);
     --chip: #2a2825;
-    --accent: #669af0;
-    --accent-warm: #f0894a;
+    --accent: #b79ce6;
+    --accent-warm: #e492b6;
+    --violet-soft: #2b2537;
+    --pink-soft: #33262f;
+    --cream-soft: #382c26;
     --card: #2a2825;
     --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     --card-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 44px -26px rgba(0, 0, 0, 0.8);
-    --wash: radial-gradient(84% 84% at 52% 100%, #3a2f22 0%, #2f2a24 25%, #23262c 48%, #1e2026 75%, #1e1c1a 100%);
+    --wash: radial-gradient(84% 84% at 52% 100%,
+            var(--cream-soft) 0%,
+            var(--pink-soft) 24%,
+            var(--violet-soft) 50%,
+            #24222c 74%,
+            #1e1c1a 100%);
     --btn: var(--black-400);
     --btn-text: var(--black-1000);
     --btn-hover: var(--black-200);
@@ -340,13 +360,16 @@ nav {
    Hero
    -------------------------------------------------------------------------- */
 
+/* The hero carries the photograph's own 6768:3720 ratio, so the frame never
+   crops it — and the image itself is used exactly as supplied: no tint,
+   no filter, no overlay. */
+
 .hero {
     position: relative;
     margin-top: var(--header-h);
+    aspect-ratio: 6768 / 3720;
     overflow: hidden;
 }
-
-/* The hero photograph is used exactly as supplied — no tint, filter, or overlay. */
 
 .hero-bg {
     position: absolute;
@@ -357,10 +380,10 @@ nav {
 
 .hero .frame {
     position: relative;
+    height: 100%;
     background: transparent;
-    padding-top: 108px;
-    padding-bottom: 108px;
-    min-height: 520px;
+    padding-top: 0;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1037,6 +1060,63 @@ footer p {
     .mobile-nav-toggle {
         display: inline-flex;
     }
+
+    /* Too short to letter over once the photo is this narrow: show the whole
+       frame as its own band, then run the intro underneath it. */
+
+    .hero {
+        aspect-ratio: auto;
+    }
+
+    .hero-bg {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        aspect-ratio: 6768 / 3720;
+    }
+
+    .hero .frame {
+        height: auto;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background: var(--surface);
+        border-top: 1px solid var(--line);
+    }
+
+    .hero h1,
+    .hero .subtitle {
+        color: var(--heading);
+    }
+
+    .hero .subtitle span,
+    .hero-eyebrow i {
+        color: var(--body);
+    }
+
+    .hero-eyebrow {
+        color: var(--heading);
+        background: var(--chip);
+        border: 1px solid var(--line);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    body.dark-theme .hero .btn-ghost {
+        background: var(--surface);
+        color: var(--heading);
+        border-color: var(--line-strong);
+    }
+
+    body.dark-theme .hero .icon-btn {
+        background: var(--surface);
+        border-color: var(--line);
+        color: var(--body);
+    }
+
+    body.dark-theme .hero .btn-primary {
+        background: var(--btn);
+        color: var(--btn-text);
+    }
 }
 
 @media (max-width: 640px) {
@@ -1056,12 +1136,6 @@ footer p {
     .logo span,
     .nav-actions > .btn {
         display: none;
-    }
-
-    .hero .frame {
-        min-height: 440px;
-        padding-top: 72px;
-        padding-bottom: 72px;
     }
 
     .hero h1 {
