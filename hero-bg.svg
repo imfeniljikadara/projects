@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Calm layered mountain range at dawn">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E7F0FB"/>
+      <stop offset="34%"  stop-color="#DEEAF8"/>
+      <stop offset="62%"  stop-color="#EFE6F0"/>
+      <stop offset="84%"  stop-color="#FAE7D6"/>
+      <stop offset="100%" stop-color="#FDF1E4"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#FFE2BC" stop-opacity="0.95"/>
+      <stop offset="45%"  stop-color="#FFE2BC" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFE2BC" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BCCFE8"/><stop offset="100%" stop-color="#CEDCF0"/>
+    </linearGradient>
+    <linearGradient id="ridge2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9DB6D8"/><stop offset="100%" stop-color="#B3C7E3"/>
+    </linearGradient>
+    <linearGradient id="ridge3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8EA7C7"/><stop offset="100%" stop-color="#A3B8D3"/>
+    </linearGradient>
+    <linearGradient id="ridge4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E88AC"/><stop offset="100%" stop-color="#849BBC"/>
+    </linearGradient>
+
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+
+  <!-- low sun -->
+  <circle cx="1180" cy="352" r="300" fill="url(#glow)"/>
+  <circle cx="1180" cy="352" r="58" fill="#FFEBD2" opacity="0.9"/>
+
+  <!-- farthest range -->
+  <path fill="url(#ridge1)" d="M0,562 L182,470 L302,522 L432,428 L560,512 L702,452 L862,532 L1002,468 L1162,520 L1322,452 L1452,508 L1600,458 L1600,900 L0,900 Z"/>
+  <rect x="-40" y="530" width="1680" height="90" fill="url(#mist)" filter="url(#soft)"/>
+
+  <!-- second range -->
+  <path fill="url(#ridge2)" d="M0,624 L142,546 L262,602 L422,518 L542,588 L682,540 L822,604 L982,528 L1122,592 L1282,540 L1422,598 L1600,544 L1600,900 L0,900 Z"/>
+  <rect x="-40" y="596" width="1680" height="88" fill="url(#mist)" filter="url(#soft)"/>
+
+  <!-- third range -->
+  <path fill="url(#ridge3)" d="M0,704 L202,620 L362,692 L522,608 L702,702 L882,622 L1062,702 L1242,628 L1422,700 L1600,638 L1600,900 L0,900 Z"/>
+  <rect x="-40" y="682" width="1680" height="80" fill="url(#mist)" filter="url(#soft)"/>
+
+  <!-- foreground range -->
+  <path fill="url(#ridge4)" d="M0,792 L180,742 L380,802 L600,730 L820,796 L1040,746 L1260,802 L1460,750 L1600,790 L1600,900 L0,900 Z"/>
+</svg>
