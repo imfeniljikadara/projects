@@ -36,6 +36,7 @@
     --line: var(--black-400);
     --line-strong: var(--black-500);
     --chip: #ffffff;
+    --chip-on-card: var(--black-200);
 
     /* Accents sampled from the hero photograph: dusk violet, meadow magenta,
        sunrise cream. One family, used everywhere. */
@@ -76,6 +77,7 @@ body.dark-theme {
     --line: var(--black-800);
     --line-strong: var(--black-700);
     --chip: #2a2825;
+    --chip-on-card: var(--black-1000);
     --accent: #b79ce6;
     --accent-warm: #e492b6;
     --violet-soft: #2b2537;
@@ -706,6 +708,10 @@ body.dark-theme .hero .btn-primary {
     flex-wrap: wrap;
     gap: 6px;
     margin-top: 16px;
+}
+
+.card .tag {
+    background: var(--chip-on-card);
 }
 
 .tag {

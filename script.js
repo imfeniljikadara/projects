@@ -13,9 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
     };
 
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme === 'dark' || (!savedTheme && prefersDark));
+    /* Light is the default; dark only when the visitor has asked for it here. */
+    setTheme(localStorage.getItem('theme') === 'dark');
 
     themeToggle.addEventListener('click', () => {
         const dark = !document.body.classList.contains('dark-theme');
