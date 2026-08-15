@@ -14,6 +14,11 @@
     --line-strong: #d8d8d3;
     --chip: #f4f4f2;
     --accent: #1f5eff;
+    --accent-warm: #d95f24;
+    --card: #ffffff;
+    --card-shadow: 0 1px 2px rgba(16, 16, 17, 0.04), 0 12px 28px -18px rgba(16, 16, 17, 0.28);
+    --card-shadow-hover: 0 1px 2px rgba(16, 16, 17, 0.05), 0 22px 44px -22px rgba(16, 16, 17, 0.34);
+    --wash: radial-gradient(88% 84% at 52% 100%, #ffe0b8 0%, #f3e2c6 22%, #dbe9fb 48%, #eaf3ff 74%, #fbfdff 100%);
     --btn: #101011;
     --btn-text: #ffffff;
     --btn-hover: #2c2c2e;
@@ -37,6 +42,11 @@ body.dark-theme {
     --line-strong: #2b2b31;
     --chip: #17171a;
     --accent: #7ea3ff;
+    --accent-warm: #f0894a;
+    --card: #141417;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --card-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 44px -26px rgba(0, 0, 0, 0.8);
+    --wash: radial-gradient(88% 84% at 52% 100%, #2a2118 0%, #1d1c1a 26%, #16191f 52%, #101114 78%, #0e0e10 100%);
     --btn: #f4f4f5;
     --btn-text: #0b0b0d;
     --btn-hover: #dededf;
@@ -318,26 +328,36 @@ nav {
 }
 
 .hero-bg {
-    background: url('hero-bg.svg') center 38% / cover no-repeat;
+    background: url('hero-bg.svg') center 58% / cover no-repeat;
 }
 
 .hero-veil {
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.26) 0%,
-            rgba(255, 255, 255, 0.08) 38%,
-            rgba(255, 255, 255, 0.46) 78%,
+    background:
+        linear-gradient(to right,
+            rgba(255, 255, 255, 0.62) 0%,
+            rgba(255, 255, 255, 0.22) 42%,
+            rgba(255, 255, 255, 0) 70%),
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.06) 34%,
+            rgba(255, 255, 255, 0.4) 76%,
             var(--surface) 100%);
 }
 
 body.dark-theme .hero-bg {
-    filter: saturate(0.7) brightness(0.62);
+    filter: saturate(0.62) brightness(0.5);
 }
 
 body.dark-theme .hero-veil {
-    background: linear-gradient(to bottom,
-            rgba(8, 8, 10, 0.58) 0%,
-            rgba(8, 8, 10, 0.44) 38%,
-            rgba(8, 8, 10, 0.78) 78%,
+    background:
+        linear-gradient(to right,
+            rgba(8, 8, 10, 0.62) 0%,
+            rgba(8, 8, 10, 0.3) 45%,
+            rgba(8, 8, 10, 0) 72%),
+        linear-gradient(to bottom,
+            rgba(8, 8, 10, 0.5) 0%,
+            rgba(8, 8, 10, 0.38) 34%,
+            rgba(8, 8, 10, 0.74) 76%,
             var(--surface) 100%);
 }
 
@@ -409,7 +429,27 @@ body.dark-theme .hero-veil {
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--caption);
+    color: var(--accent-warm);
+}
+
+/* Card — flat surface, 12px radius, soft lift on hover (no hairline border) */
+
+.card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Sections that sit on the warm-to-cool wash rocket uses behind card grids */
+
+.section-wash > .frame {
+    background: var(--wash);
 }
 
 .section-head {
@@ -627,22 +667,13 @@ body.dark-theme .hero-veil {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 16px;
+    gap: 20px;
 }
 
 .project-item {
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    background: var(--surface-soft);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), background-color 0.2s var(--ease);
-}
-
-.project-item:hover {
-    border-color: var(--line-strong);
-    transform: translateY(-2px);
+    padding: 28px;
 }
 
 .project-header {
@@ -798,30 +829,23 @@ body.dark-theme .hero-veil {
 
 .achievements-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     list-style: none;
 }
 
 .achievements-list li {
     display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 20px 24px;
-    border-left: 1px solid var(--line);
+    flex-direction: column;
+    gap: 14px;
+    padding: 26px;
     font-size: 14.5px;
     line-height: 1.6;
 }
 
-.achievements-list li:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
 .achievements-list i {
-    font-size: 18px;
-    color: var(--caption);
-    margin-top: 2px;
+    font-size: 22px;
+    color: var(--accent-warm);
 }
 
 /* --------------------------------------------------------------------------
@@ -1035,15 +1059,9 @@ footer p {
         gap: 4px;
     }
 
-    .achievements-list li {
-        padding: 16px 0;
-        border-left: 0;
-        border-top: 1px solid var(--line);
-    }
-
-    .achievements-list li:first-child {
-        border-top: 0;
-        padding-top: 0;
+    .achievements-list li,
+    .project-item {
+        padding: 22px;
     }
 
     .project-grid {
