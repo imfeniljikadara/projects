@@ -1061,61 +1061,18 @@ footer p {
         display: inline-flex;
     }
 
-    /* Too short to letter over once the photo is this narrow: show the whole
-       frame as its own band, then run the intro underneath it. */
+    /* Narrow screens keep the shipped hero: photo behind, intro lettered
+       over it. The ratio-locked full-bleed version is desktop-only. */
 
     .hero {
         aspect-ratio: auto;
     }
 
-    .hero-bg {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        aspect-ratio: 6768 / 3720;
-    }
-
     .hero .frame {
         height: auto;
-        padding-top: 48px;
-        padding-bottom: 48px;
-        background: var(--surface);
-        border-top: 1px solid var(--line);
-    }
-
-    .hero h1,
-    .hero .subtitle {
-        color: var(--heading);
-    }
-
-    .hero .subtitle span,
-    .hero-eyebrow i {
-        color: var(--body);
-    }
-
-    .hero-eyebrow {
-        color: var(--heading);
-        background: var(--chip);
-        border: 1px solid var(--line);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-
-    body.dark-theme .hero .btn-ghost {
-        background: var(--surface);
-        color: var(--heading);
-        border-color: var(--line-strong);
-    }
-
-    body.dark-theme .hero .icon-btn {
-        background: var(--surface);
-        border-color: var(--line);
-        color: var(--body);
-    }
-
-    body.dark-theme .hero .btn-primary {
-        background: var(--btn);
-        color: var(--btn-text);
+        min-height: 440px;
+        padding-top: 72px;
+        padding-bottom: 72px;
     }
 }
 
