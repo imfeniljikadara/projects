@@ -107,6 +107,13 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-h) + 24px);
     -webkit-text-size-adjust: 100%;
+    /* rocket.new hides the scrollbar track; scrolling still works normally */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -367,26 +374,35 @@ nav {
 .hero {
     position: relative;
     margin-top: var(--header-h);
+}
+
+/* The photo fills the framed container — edge to edge between the rails,
+   never the full viewport — and carries its own 6768:3720 ratio so the
+   frame crops nothing. */
+
+.hero .frame {
+    position: relative;
     aspect-ratio: 6768 / 3720;
+    background: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
     background: url('Image.png') center center / cover no-repeat;
 }
 
-.hero .frame {
+.hero .frame > :not(.hero-bg) {
     position: relative;
-    height: 100%;
-    background: transparent;
-    padding-top: 0;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    z-index: 1;
 }
 
 /* Hero sits on a light photograph in both themes, so its text keeps the light-mode ink. */
@@ -1064,12 +1080,8 @@ footer p {
     /* Narrow screens keep the shipped hero: photo behind, intro lettered
        over it. The ratio-locked full-bleed version is desktop-only. */
 
-    .hero {
-        aspect-ratio: auto;
-    }
-
     .hero .frame {
-        height: auto;
+        aspect-ratio: auto;
         min-height: 440px;
         padding-top: 72px;
         padding-bottom: 72px;
