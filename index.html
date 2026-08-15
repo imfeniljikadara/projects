@@ -4,94 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fenil Jikadara</title>
+    <meta name="description" content="Fenil Jikadara - AI Engineer building LLM apps, developer tools, and AI infrastructure.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">F's</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contributions">Open Source</a></li>
-                    <li><a href="#leadership">Leadership</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                </ul>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                    <span class="sr-only">Toggle dark mode</span>
+        <nav>
+            <a class="logo" href="#top">Fenil Jikadara</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contributions">Open Source</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Switch to dark mode">
+                    <i class="ph ph-moon-stars" aria-hidden="true"></i>
                 </button>
-            </nav>
-            
-            <div class="hero">
-                <h1>Fenil Jikadara</h1>
-                <p class="subtitle">Developer, Contributer and Building LLM Apps, Devtools & AI Infra</p>
-                <div class="contact-links">
-                    <a href="tel:+919737293555" title="Phone">
-                        <i class="fas fa-phone"></i>
+                <button class="icon-btn mobile-nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                    <i class="ph ph-list" aria-hidden="true"></i>
+                </button>
+                <a class="btn btn-primary btn-sm" href="mailto:feniljikadara2004@gmail.com">Get in touch</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="top">
+        <div class="frame">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <p class="hero-eyebrow">
+                <i class="ph ph-map-pin" aria-hidden="true"></i>
+                AI Engineer · Bengaluru, IN
+            </p>
+            <h1>Fenil Jikadara</h1>
+            <p class="subtitle">
+                I build LLM apps, developer tools, and AI infrastructure.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">
+                    <i class="ph ph-arrow-down" aria-hidden="true"></i> See the work
+                </a>
+                <a class="btn btn-ghost" href="mailto:feniljikadara2004@gmail.com">
+                    <i class="ph ph-envelope-simple" aria-hidden="true"></i> Email me
+                </a>
+                <div class="icon-row">
+                    <a class="icon-btn" href="https://github.com/imfeniljikadara" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+                        <i class="ph ph-github-logo" aria-hidden="true"></i>
                     </a>
-                    <a href="mailto:feniljikadara2004@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
+                    <a class="icon-btn" href="https://linkedin.com/in/imfeniljikadara/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
                     </a>
-                    <a href="https://linkedin.com/in/imfeniljikadara/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/imfeniljikadara" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
+                    <a class="icon-btn" href="tel:+919737293555" title="Phone" aria-label="Phone">
+                        <i class="ph ph-phone" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                Motivated Student Developer skilled in building scalable <strong>developer tools</strong>, <strong>AI applications</strong>, and <strong>productivity extensions</strong>, with cross-platform expertise (<strong>macOS</strong>, <strong>Windows</strong>, <strong>Ubuntu</strong>). Strong grasp of <strong>Data Structures</strong>, <strong>Algorithms</strong>, and <strong>problem-solving</strong>.
-            </p>
-            
-            <div class="education">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <div class="edu-header">
-                        <h4>Indian Institute of Information Technology Vadodara</h4>
-                        <span class="date">Aug 2022 - May 2026</span>
-                    </div>
-                    <p class="edu-details">Bachelor of Technology in Computer Science and Engineering</p>
-                    <p class="edu-details"><strong>Coursework:</strong> Data Structures & Algorithms, Design & Analysis of Algorithms, OOP, Operating Systems, Computer Networks, Databases, Information Retrieval, Image Processing, Discrete Mathematics</p>
+    <section class="section" id="stats">
+        <div class="frame">
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-value">15+</p>
+                    <p class="stat-label">Clients shipped AI solutions for</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">6,300+</p>
+                    <p class="stat-label">Installs of my VS Code extension</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">1,000+</p>
+                    <p class="stat-label">Developers using ContextBase</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">2</p>
+                    <p class="stat-label">Upstream PRs merged</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="skills">
-                <h3>Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
+    <section class="section" id="about">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2 class="section-title">Developer, contributor, builder.</h2>
+                </div>
+                <p class="section-note">Built to ship, not to demo.</p>
+            </div>
+
+            <p class="about-text">
+                I build scalable <strong>developer tools</strong>, <strong>AI applications</strong>, and <strong>productivity extensions</strong> - from MCP infrastructure and VS Code extensions to production LLM systems for clients. Strong grounding in <strong>data structures</strong>, <strong>algorithms</strong>, and problem-solving.
+            </p>
+
+            <div class="about-grid">
+                <div>
+                    <h3>Education</h3>
+                    <p class="edu-school">Indian Institute of Information Technology Vadodara</p>
+                    <p class="edu-meta">B.Tech, Computer Science and Engineering · Aug 2022 – May 2026</p>
+                    <p class="edu-course">
+                        Data Structures &amp; Algorithms, Design &amp; Analysis of Algorithms, OOP, Operating Systems, Computer Networks, Databases, Information Retrieval, Image Processing, Discrete Mathematics
+                    </p>
+                </div>
+                <div>
+                    <h3>Skills</h3>
+                    <div class="skill-group">
                         <h4>Languages</h4>
                         <p>C/C++, Java, Python, JavaScript, TypeScript, SQL</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Web Technologies</h4>
+                    <div class="skill-group">
+                        <h4>Web</h4>
                         <p>FastAPI, ReactJS, NextJS, NodeJS, HTML/CSS, REST APIs</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Cloud & DevOps</h4>
+                    <div class="skill-group">
+                        <h4>Cloud &amp; DevOps</h4>
                         <p>GCP, AWS, Azure, Docker, Kubernetes, CI/CD</p>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-group">
                         <h4>Databases</h4>
                         <p>PostgreSQL, MongoDB, Redis, Query Optimization</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Tools & Methods</h4>
+                    <div class="skill-group">
+                        <h4>Tools &amp; Methods</h4>
                         <p>Git, Agile, Technical Docs, API Integration, Troubleshooting, Stakeholder Management</p>
                     </div>
                 </div>
@@ -99,313 +142,386 @@
         </div>
     </section>
 
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
+    <section class="section" id="experience">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Experience</p>
+                    <h2 class="section-title">Where I've worked.</h2>
+                </div>
+            </div>
 
             <div class="experience-item">
-                <div class="exp-header">
+                <div class="exp-meta">
+                    <p class="company">Smallbay Digital</p>
+                    <p class="date">Aug 2025 – Present</p>
+                    <p class="place">Bengaluru, IN (Remote)</p>
+                </div>
+                <div class="exp-body">
                     <h3>AI Engineer</h3>
-                    <span class="date">Aug 2025 - Present | Bengaluru, IN (Remote)</span>
+                    <ul class="exp-details">
+                        <li>Built end-to-end AI solutions for <strong>15+ clients</strong>: custom chatbots, multilingual voice agents, and workflow automation using LangGraph.</li>
+                        <li>Deployed no-code/low-code pipelines integrating <strong>20+ APIs</strong> for real-time business intelligence and event-driven notifications.</li>
+                        <li>Engineered enterprise solutions (inventory management, invoicing, barcode generation, Slack/email alerts) reducing manual ops by <strong>75%</strong>.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Retool</span>
+                        <span class="tag">N8n</span>
+                        <span class="tag">Make.com</span>
+                        <span class="tag">GoHighLevel</span>
+                        <span class="tag">Web Scraping</span>
+                    </div>
                 </div>
-                <div class="company">
-                    <span>Smallbay Digital</span>
-                </div>
-                <ul class="exp-details">
-                    <li>Built end-to-end AI solutions for <strong>15+ clients</strong>: custom chatbots, multilingual voice agents, and workflow automation using <strong>LangGraph</strong>.</li>
-                    <li>Deployed no-code/low-code pipelines integrating <strong>20+ APIs</strong> for real-time business intelligence and event-driven notifications.</li>
-                    <li>Engineered enterprise solutions (inventory management, invoicing, barcode generation, Slack/email alerts) reducing manual ops by <strong>75%</strong>.</li>
-                    <li>Tech Stack: <strong>Python</strong>, <strong>JavaScript</strong>, <strong>LangChain</strong>, <strong>LangGraph</strong>, <strong>Retool</strong>, <strong>N8n</strong>, <strong>Make.com</strong>, <strong>GoHighLevel</strong>, Web Scraping</li>
-                </ul>
             </div>
 
             <div class="experience-item">
-                <div class="exp-header">
+                <div class="exp-meta">
+                    <p class="company">FixitAI</p>
+                    <p class="date">May 2025 – Sep 2025</p>
+                    <p class="place">Gurugram, IN</p>
+                </div>
+                <div class="exp-body">
                     <h3>Software Engineering Intern</h3>
-                    <span class="date">May 2025 - Sep 2025 | Gurugram, IN</span>
+                    <ul class="exp-details">
+                        <li>Deployed Azure microservices handling <strong>10k+ daily requests</strong>; cut latency <strong>80%</strong> via async processing and Redis caching.</li>
+                        <li>Optimized APIs achieving <strong>65% latency reduction</strong> and <strong>3x throughput</strong> through async refactoring.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Docker</span>
+                    </div>
                 </div>
-                <div class="company">
-                    <span>FixitAI</span>
-                </div>
-                <ul class="exp-details">
-                    <li>Deployed <strong>Azure microservices</strong> handling <strong>10k+ daily requests</strong>; cut latency <strong>80%</strong> via async processing and <strong>Redis caching</strong>.</li>
-                    <li>Optimized APIs achieving <strong>65% latency reduction</strong> and <strong>3x throughput</strong> through async refactoring.</li>
-                    <li>Tech Stack: <strong>Python</strong>, <strong>FastAPI</strong>, <strong>MongoDB</strong>, <strong>Redis</strong>, <strong>Azure</strong>, <strong>Docker</strong></li>
-                </ul>
             </div>
 
             <div class="experience-item">
-                <div class="exp-header">
+                <div class="exp-meta">
+                    <p class="company">SERC, IIIT Hyderabad</p>
+                    <p class="date">May 2025 – July 2025</p>
+                    <p class="place">Hyderabad, IN</p>
+                </div>
+                <div class="exp-body">
                     <h3>Summer Research Intern</h3>
-                    <span class="date">May 2025 - July 2025 | Hyderabad, IN</span>
+                    <ul class="exp-details">
+                        <li>Built an <strong>SMT-based validation pipeline</strong> improving code accuracy <strong>95%</strong> and cutting manual verification <strong>80%</strong> via type-safe reasoning, accelerating distributed team workflows.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Z3</span>
+                        <span class="tag">SMT-LIB2</span>
+                        <span class="tag">Dafny</span>
+                        <span class="tag">Boogie</span>
+                    </div>
                 </div>
-                <div class="company">
-                    <span>Software Engineering Research Center (SERC), IIIT Hyderabad</span>
-                </div>
-                <ul class="exp-details">
-                    <li>Built an <strong>SMT-based validation pipeline</strong> improving code accuracy <strong>95%</strong> and cutting manual verification <strong>80%</strong> via type-safe reasoning, accelerating distributed team workflows.</li>
-                    <li>Tech Stack: <strong>Python</strong>, <strong>Z3</strong>, <strong>SMT-LIB2</strong>, <strong>Dafny</strong>, <strong>Boogie</strong></li>
-                </ul>
             </div>
 
             <div class="experience-item">
-                <div class="exp-header">
+                <div class="exp-meta">
+                    <p class="company">SellerMate.AI</p>
+                    <p class="date">Oct 2024 – July 2025</p>
+                    <p class="place">Bengaluru, IN</p>
+                </div>
+                <div class="exp-body">
                     <h3>Software Engineering Intern</h3>
-                    <span class="date">Oct 2024 - July 2025 | Bengaluru, IN</span>
+                    <ul class="exp-details">
+                        <li>Built a <strong>B2B lead-gen platform</strong> integrating LinkedIn/Gmail/Apollo/Sheets APIs; achieved <strong>90% ICP match</strong> and <strong>60% workflow reduction</strong>.</li>
+                        <li>Developed an <strong>AI outreach system</strong> boosting demo bookings <strong>3x</strong> and activation <strong>70%</strong>; advised technical stakeholders.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">Gmail / Sheets / LinkedIn APIs</span>
+                    </div>
                 </div>
-                <div class="company">
-                    <span>SellerMate.AI</span>
-                </div>
-                <ul class="exp-details">
-                    <li>Built a <strong>B2B lead-gen platform</strong> integrating <strong>LinkedIn/Gmail/Apollo/Sheets APIs</strong>; achieved <strong>90% ICP match</strong> and <strong>60% workflow reduction</strong>.</li>
-                    <li>Developed an <strong>AI outreach system</strong> boosting demo bookings <strong>3x</strong> and activation <strong>70%</strong>; advised technical stakeholders.</li>
-                    <li>Tech Stack: <strong>Python</strong>, <strong>FastAPI</strong>, <strong>PostgreSQL</strong>, OpenAI/Gmail/Sheets/LinkedIn APIs</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>ContextBase CLI</h3>
-                    <span class="date">Apr 2025</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/contextbase-cli" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/contextbase-cli" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://www.npmjs.com/package/contextbase-cli" target="_blank"><i class="fas fa-cube"></i> NPM Package</a>
-                </div>
-                <p class="project-description">Command-line tool for managing memory keys using the ContextBase MCP API.</p>
-                <p class="project-tech">TypeScript, Node.js, Commander.js, Axios, Conf, npm</p>
-                <ul class="project-details">
-                    <li>Built a CLI tool enabling terminal-based CRUD operations on memory keys via the <strong>ContextBase MCP API</strong>.</li>
-                    <li>Integrated secure authentication and implemented API communication using <strong>Axios</strong>.</li>
-                    <li>Leveraged <strong>Commander.js</strong> for command parsing and <strong>Conf</strong> for persistent configuration management.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>ContextBase Python SDK</h3>
-                    <span class="date">Mar 2025</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/contextbase-py" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/contextbase-py" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://pypi.org/project/contextbase-py/" target="_blank"><i class="fas fa-cube"></i> PyPI Package</a>
-                </div>
-                <p class="project-description">Python SDK for programmatic interaction with the ContextBase MCP API.</p>
-                <p class="project-tech">Python, Requests, REST API, JSON, PyPI</p>
-                <ul class="project-details">
-                    <li>Developed a Python SDK enabling authentication and CRUD operations on memory keys via the <strong>ContextBase MCP API</strong>.</li>
-                    <li>Utilized <strong>Requests</strong> for secure REST communication and implemented robust token handling.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>ContextBase TypeScript SDK</h3>
-                    <span class="date">Feb 2025</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/contextbase-ts" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/contextbase-ts" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://www.npmjs.com/package/contextbase-ts" target="_blank"><i class="fas fa-cube"></i> NPM Package</a>
-                </div>
-                <p class="project-description">Typed SDK for seamless integration with the ContextBase MCP API.</p>
-                <p class="project-tech">TypeScript, Axios, Node.js, REST API, JSON, npm</p>
-                <ul class="project-details">
-                    <li>Developed a TypeScript SDK for performing authentication and full CRUD operations on memory key-value pairs via the <strong>ContextBase MCP API</strong>.</li>
-                    <li>Integrated <strong>Axios</strong> for secure API communication with JWT-based auth and intuitive, typed method interfaces.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>ContextBase MCP Server</h3>
-                    <span class="date">Jan 2025</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/contextbase" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/contextbase" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://contextbase.onrender.com" target="_blank"><i class="fas fa-server"></i> Live Server</a>
-                </div>
-                <p class="project-description">Backend server for storing context data using the Model Context Protocol (MCP).</p>
-                <p class="project-tech">TypeScript, Node.js, Fastify, Prisma ORM, PostgreSQL, Redis, JWT, Docker, Zod</p>
-                <ul class="project-details">
-                    <li>Architected a scalable backend API, CLI, and SDKs (TypeScript/Python) for the <strong>Model Context Protocol</strong>, serving <strong>1,000+ developers</strong>.</li>
-                    <li>Developed a Fastify-based backend implementing the <strong>Model Context Protocol (MCP)</strong> for managing AI context data.</li>
-                    <li>Utilized <strong>Prisma ORM</strong> with PostgreSQL for structured persistence and <strong>Redis</strong> for high-speed caching.</li>
-                    <li>Implemented secure <strong>JWT authentication</strong>, schema validation with <strong>Zod</strong>, and robust logging for observability.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Quiz.ai</h3>
-                    <span class="date">Dec 2024</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/quiz-ai" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/quiz-ai" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                </div>
-                <p class="project-description">AI-powered Chrome extension for generating quizzes from webpage content.</p>
-                <p class="project-tech">JavaScript, Chrome Extension API, HTML/CSS, Tailwind CSS, Google Gemini API, JSON</p>
-                <ul class="project-details">
-                    <li>Developed a Chrome extension that extracts webpage content and generates quizzes using the <strong>Gemini 1.5 Pro API</strong>.</li>
-                    <li>Built a responsive popup interface with customizable quiz parameters using <strong>Tailwind CSS</strong>.</li>
-                    <li>Enabled real-time <strong>DOM parsing</strong> and AI-driven quiz generation with seamless UX integration.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Figure</h3>
-                    <span class="date">Nov 2024</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/figure" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/figure" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://marketplace.visualstudio.com/items?itemName=imfeniljikadara.figure" target="_blank"><i class="fab fa-microsoft"></i> VS Code Marketplace</a>
-                </div>
-                <p class="project-description">VS Code extension integrating Excalidraw for in-editor diagram creation.</p>
-                <p class="project-tech">TypeScript, VSCode Extension API, React, Excalidraw, HTML/CSS, Node.js</p>
-                <ul class="project-details">
-                    <li>Published a VS Code extension integrating the <strong>Excalidraw</strong> editor; achieved <strong>5,200+ marketplace installs</strong>.</li>
-                    <li>Built using the <strong>VS Code Extension API</strong> to embed <strong>Excalidraw</strong> for native diagram creation inside the editor.</li>
-                    <li>Enabled in-editor <strong>diagram editing</strong>, <strong>file persistence</strong>, and support for <strong><code>.excalidraw</code></strong> and image exports.</li>
-                    <li>Improved developer workflows by integrating <strong>visual documentation</strong> directly into the coding environment.</li>
-                </ul>
-            </div>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Nexus.ai</h3>
-                    <span class="date">Oct 2024</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://feniljikadara.vercel.app/nexus-ai" target="_blank"><i class="fas fa-paperclip"></i> Overview</a>
-                    <a href="https://github.com/imfeniljikadara/nexus-ai" target="_blank"><i class="fab fa-github"></i> Repository</a>
-                    <a href="https://nexus-ai-backend-sbos.onrender.com" target="_blank"><i class="fas fa-server"></i> Backend Server</a>
-                    <a href="https://nexus-ai-lac.vercel.app" target="_blank"><i class="fas fa-globe"></i> Live Product</a>
-                </div>
-                <p class="project-description">AI-powered platform for conversational interactions with PDF documents.</p>
-                <p class="project-tech">Next.js, TypeScript, Tailwind CSS, FastAPI, Python, Google Gemini 1.5 Flash, ChromaDB, LangChain</p>
-                <ul class="project-details">
-                    <li>Built a full-stack application with <strong>Next.js</strong> frontend and <strong>FastAPI</strong> backend to enable real-time chat with PDF content.</li>
-                    <li>Integrated <strong>Google Gemini 1.5 Flash</strong> via <strong>LangChain</strong> for context-aware, AI-driven responses.</li>
-                    <li>Leveraged <strong>RAG</strong> with <strong>ChromaDB</strong> for efficient vector embedding storage and retrieval.</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <section id="contributions" class="section">
-        <div class="container">
-            <h2 class="section-title">Open Source Contributions</h2>
-            
+    <section class="section section-wash" id="projects">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Projects</p>
+                    <h2 class="section-title">Things I've shipped.</h2>
+                </div>
+                <p class="section-note">Devtools, SDKs, and AI apps - all open source.</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>ContextBase CLI</h3>
+                        <span class="date">Apr 2025</span>
+                    </div>
+                    <p class="project-description">Command-line tool for managing memory keys through the ContextBase MCP API.</p>
+                    <ul class="project-details">
+                        <li>Terminal-based CRUD on memory keys with secure authentication.</li>
+                        <li><strong>Commander.js</strong> for command parsing, <strong>Conf</strong> for persistent config.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Commander.js</span>
+                        <span class="tag">npm
+                        </span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.npmjs.com/package/contextbase-cli" target="_blank" rel="noopener"><i class="ph ph-package" aria-hidden="true"></i> npm Package</a>
+                        <a href="https://github.com/imfeniljikadara/contextbase-cli" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                    </div>
+                </article>
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>ContextBase SDKs</h3>
+                        <span class="date">Feb – Mar 2025</span>
+                    </div>
+                    <p class="project-description">Typed TypeScript and Python SDKs for the ContextBase MCP API.</p>
+                    <ul class="project-details">
+                        <li>Full CRUD on memory key-value pairs with <strong>JWT-based auth</strong> and typed method interfaces.</li>
+                        <li>Published to <strong>npm</strong> and <strong>PyPI</strong> with robust token handling.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Axios</span>
+                        <span class="tag">Requests</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.npmjs.com/package/contextbase-ts" target="_blank" rel="noopener"><i class="ph ph-package" aria-hidden="true"></i> npm Package</a>
+                        <a href="https://pypi.org/project/contextbase-py/" target="_blank" rel="noopener"><i class="ph ph-package" aria-hidden="true"></i> PyPI Package</a>
+                        <a href="https://github.com/imfeniljikadara/contextbase-ts" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                    </div>
+                </article>
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>ContextBase MCP Server</h3>
+                        <span class="date">Jan 2025</span>
+                    </div>
+                    <p class="project-description">Backend server for storing context data using the Model Context Protocol.</p>
+                    <ul class="project-details">
+                        <li>Architected a scalable backend API, CLI, and SDKs (TypeScript/Python) for MCP, serving <strong>1,000+ developers</strong>.</li>
+                        <li>Fastify backend with <strong>Prisma ORM</strong> on PostgreSQL and <strong>Redis</strong> caching.</li>
+                        <li>Secure <strong>JWT auth</strong>, schema validation with <strong>Zod</strong>, and structured logging.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Fastify</span>
+                        <span class="tag">Prisma</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://feniljikadara.vercel.app/contextbase" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out" aria-hidden="true"></i> Overview</a>
+                        <a href="https://github.com/imfeniljikadara/contextbase" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                        <a href="https://contextbase.onrender.com" target="_blank" rel="noopener"><i class="ph ph-hard-drives" aria-hidden="true"></i> Live server</a>
+                    </div>
+                </article>
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>Quiz.ai</h3>
+                        <span class="date">Dec 2024</span>
+                    </div>
+                    <p class="project-description">Chrome extension that generates quizzes from any webpage.</p>
+                    <ul class="project-details">
+                        <li>Extracts page content and generates quizzes with the <strong>Gemini 1.5 Pro API</strong>.</li>
+                        <li>Responsive popup with customizable quiz parameters and real-time <strong>DOM parsing</strong>.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Chrome API</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Gemini</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://feniljikadara.vercel.app/quiz-ai" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out" aria-hidden="true"></i> Overview</a>
+                        <a href="https://github.com/imfeniljikadara/quiz-ai" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                    </div>
+                </article>
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>Figure</h3>
+                        <span class="date">Nov 2024</span>
+                    </div>
+                    <p class="project-description">VS Code extension that brings Excalidraw diagramming into the editor.</p>
+                    <ul class="project-details">
+                        <li>Published to the marketplace; <strong>6,300+ installs</strong> to date.</li>
+                        <li>In-editor <strong>diagram editing</strong>, file persistence, and <code>.excalidraw</code> plus image exports.</li>
+                        <li>Puts <strong>visual documentation</strong> directly in the coding workflow.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">VS Code API</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Excalidraw</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://feniljikadara.vercel.app/figure" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out" aria-hidden="true"></i> Overview</a>
+                        <a href="https://github.com/imfeniljikadara/figure" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=imfeniljikadara.figure" target="_blank" rel="noopener"><i class="ph ph-storefront" aria-hidden="true"></i> Marketplace</a>
+                    </div>
+                </article>
+                <article class="project-item card">
+                    <div class="project-header">
+                        <h3>Nexus.ai</h3>
+                        <span class="date">Oct 2024</span>
+                    </div>
+                    <p class="project-description">AI platform for conversational interactions with PDF documents.</p>
+                    <ul class="project-details">
+                        <li>Full-stack app: <strong>Next.js</strong> frontend, <strong>FastAPI</strong> backend, real-time chat over PDF content.</li>
+                        <li><strong>Gemini 1.5 Flash</strong> via <strong>LangChain</strong> for context-aware responses.</li>
+                        <li><strong>RAG</strong> with <strong>ChromaDB</strong> for vector embedding storage and retrieval.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">ChromaDB</span>
+                        <span class="tag">Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nexus-ai-lac.vercel.app" target="_blank" rel="noopener"><i class="ph ph-globe-simple" aria-hidden="true"></i> Live product</a>
+                        <a href="https://github.com/imfeniljikadara/nexus-ai" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Repository</a>
+                        <a href="https://feniljikadara.vercel.app/nexus-ai" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out" aria-hidden="true"></i> Overview</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contributions">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Open source</p>
+                    <h2 class="section-title">Contributions.</h2>
+                </div>
+            </div>
+
             <div class="contribution-item">
-                <div class="contrib-header">
-                    <h3>AboutCode – Scancode.io</h3>
-                    <span class="date">Apr 2025</span>
-                </div>
-                <div class="contrib-links">
-                    <a href="https://github.com/aboutcode-org/scancode.io/pull/1650" target="_blank">
-                        <i class="fab fa-github"></i> Pull Request #1650
-                    </a>
+                <div class="contrib-meta">
+                    <h3>Accord Project - Concerto</h3>
+                    <p class="date">Mar 2025</p>
+                    <div class="contrib-links">
+                        <a href="https://github.com/accordproject/concerto/pull/1005" target="_blank" rel="noopener"><i class="ph ph-git-pull-request" aria-hidden="true"></i> Pull request #1005</a>
+                    </div>
                 </div>
                 <ul class="contrib-details">
-                    <li>Improved <strong>Air-Gapped Docker installation</strong> by refactoring core files for reliable offline deployment.</li>
+                    <li>Migrated <code>concerto-cto</code> from JavaScript to TypeScript (<strong>+1269/-687 lines</strong>), improving type safety and maintainability.</li>
+                    <li>Achieved <strong>100% test coverage</strong> across statements, branches, functions, and lines using <code>nyc</code>.</li>
+                    <li>Preserved <strong>100% backward compatibility</strong>, passing all <strong>138 existing tests</strong> unmodified.</li>
+                    <li>Defined complete TypeScript types, eliminating all implicit <code>any</code> usage.</li>
+                </ul>
+            </div>
+
+            <div class="contribution-item">
+                <div class="contrib-meta">
+                    <h3>AboutCode - Scancode.io</h3>
+                    <p class="date">Apr 2025</p>
+                    <div class="contrib-links">
+                        <a href="https://github.com/aboutcode-org/scancode.io/pull/1650" target="_blank" rel="noopener"><i class="ph ph-git-pull-request" aria-hidden="true"></i> Pull request #1650</a>
+                    </div>
+                </div>
+                <ul class="contrib-details">
+                    <li>Improved <strong>air-gapped Docker installation</strong> by refactoring core files for reliable offline deployment.</li>
                     <li>Standardized <strong>Docker images</strong> and command formats to align with online workflows and reduce verbosity.</li>
                     <li>Integrated <strong>ClamAV antivirus</strong> with minimal changes (<strong>+21/-5 lines</strong>) for secure offline scanning across <strong>6 services</strong>.</li>
                 </ul>
             </div>
-            
-            <div class="contribution-item">
-                <div class="contrib-header">
-                    <h3>Accord Project – Concerto</h3>
-                    <span class="date">Mar 2025</span>
-                </div>
-                <div class="contrib-links">
-                    <a href="https://github.com/accordproject/concerto/pull/1005" target="_blank">
-                        <i class="fab fa-github"></i> Pull Request #1005
-                    </a>
-                </div>
-                <ul class="contrib-details">
-                    <li>Migrated <strong><code>concerto-cto</code></strong> from JavaScript to TypeScript (<strong>+1269/-687 lines</strong>), improving type safety and maintainability.</li>
-                    <li>Achieved <strong>100% test coverage</strong> (statements, branches, functions, lines) using <strong><code>nyc</code></strong>.</li>
-                    <li>Preserved <strong>100% backward compatibility</strong>, passing all <strong>138 existing tests</strong> unmodified.</li>
-                    <li>Defined complete TypeScript types, eliminating all implicit <strong><code>any</code></strong> usage.</li>
-                </ul>
-            </div>
         </div>
     </section>
 
-    <section id="leadership" class="section">
-        <div class="container">
-            <h2 class="section-title">Leadership</h2>
-            
-            <div class="leadership-item">
-                <div class="lead-header">
-                    <h3>Technical Committee – IIIT Vadodara ICD</h3>
-                    <span class="date">Mar 2023 – Apr 2024</span>
+    <section class="section" id="leadership">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Leadership</p>
+                    <h2 class="section-title">Beyond the code.</h2>
                 </div>
-                <p class="lead-role">Core Member</p>
+            </div>
+
+            <div class="leadership-item">
+                <div class="lead-meta">
+                    <h3>Technical Committee - IIIT Vadodara ICD</h3>
+                    <p class="lead-role">Core Member</p>
+                    <p class="date">Mar 2023 – Apr 2024</p>
+                </div>
                 <ul class="lead-details">
                     <li>Organized and managed tech events, led sponsorship outreach, marketing, and strategic planning.</li>
-                    <li>Coordinated <strong>Horizon 2.0 (Annual Tech Fest)</strong>; secured sponsors including <strong>Microsoft Azure</strong>, <strong>Reskill</strong>, <strong>HoverRobotix</strong>, <strong>MentorX</strong>, <strong>RevUp</strong>, <strong>100X</strong>, <strong>Wolfram</strong>, and <strong>Unstop</strong>, and conducted workshops across coding, design, robotics, gaming, and finance.</li>
+                    <li>Coordinated <strong>Horizon 2.0</strong>, the annual tech fest; secured sponsors including <strong>Microsoft Azure</strong>, Reskill, HoverRobotix, MentorX, RevUp, 100X, Wolfram, and Unstop, and ran workshops across coding, design, robotics, gaming, and finance.</li>
                 </ul>
             </div>
 
             <div class="leadership-item">
-                <div class="lead-header">
-                    <h3>Mood Indigo – IIT Bombay</h3>
-                    <span class="date">Nov 2022 – Jan 2023</span>
+                <div class="lead-meta">
+                    <h3>Mood Indigo - IIT Bombay</h3>
+                    <p class="lead-role">Digital Performance Director</p>
+                    <p class="date">Nov 2022 – Jan 2023</p>
                 </div>
-                <p class="lead-role">Digital Performance Director</p>
                 <ul class="lead-details">
-                    <li>Drove a record surge in pre-fest engagement for <strong>Mood Indigo</strong>, <strong>Asia's largest college cultural festival</strong>, through personalized outreach and team coordination.</li>
-                    <li>Led <strong>Indigo Squad</strong> outreach and registration across multiple universities in <strong>India</strong>, onboarding <strong>100+</strong> members from <strong>10+</strong> institutions.</li>
+                    <li>Drove a record surge in pre-fest engagement for <strong>Mood Indigo</strong>, Asia's largest college cultural festival, through personalized outreach and team coordination.</li>
+                    <li>Led <strong>Indigo Squad</strong> outreach and registration across India, onboarding <strong>100+</strong> members from <strong>10+</strong> institutions.</li>
                     <li>Managed campus ambassador networks, digital campaigns, and participant onboarding, ranking among the top digital coordinators nationwide.</li>
-                </ul>                               
+                </ul>
             </div>
-               
         </div>
     </section>
 
-    <section id="achievements" class="section">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
+    <section class="section" id="achievements">
+        <div class="frame">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Achievements</p>
+                    <h2 class="section-title">Milestones.</h2>
+                </div>
+            </div>
+            <ul class="achievements-list">
+                <li class="card"><i class="ph ph-code" aria-hidden="true"></i><span>Solved <strong>350+</strong> LeetCode problems; ranked in the <strong>top 0.5%</strong> in contest.</span></li>
+                <li class="card"><i class="ph ph-users-three" aria-hidden="true"></i><span>Led the Technical Committee for Horizon 2.0; secured <strong>8+ sponsors</strong> including Microsoft Azure.</span></li>
+                <li class="card"><i class="ph ph-certificate" aria-hidden="true"></i><span>Completed the <strong>Machine Learning Specialization</strong> (Coursera).</span></li>
+                <li class="card"><i class="ph ph-check-square" aria-hidden="true"></i><span>Completed <strong>QA Testing</strong> certification (Udemy).</span></li>
+            </ul>
+        </div>
+    </section>
 
-            <div class="leadership-item">
-                <ul class="lead-details">
-                    <li>Solved <strong>350+</strong> LeetCode problems; ranked in the <strong>top 0.5%</strong> in contest.</li>
-                    <li>Led the <strong>Technical Committee</strong> for Horizon 2.0 tech fest; secured <strong>8+ sponsors</strong> including <strong>Microsoft Azure</strong> through stakeholder management.</li>
-                    <li>Completed the <strong>Machine Learning Specialization</strong> (Coursera).</li>
-                    <li>Completed <strong>QA Testing</strong> certification (Udemy).</li>
-                </ul>
+    <section class="section contact section-wash" id="contact">
+        <div class="frame">
+            <p class="eyebrow">Contact</p>
+            <h2>Building something interesting? Let's talk.</h2>
+            <p>Open to conversations about AI engineering, developer tooling, and open source.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a class="btn btn-primary" href="mailto:feniljikadara2004@gmail.com">
+                    <i class="ph ph-envelope-simple" aria-hidden="true"></i> feniljikadara2004@gmail.com
+                </a>
+                <div class="icon-row">
+                    <a class="icon-btn" href="https://github.com/imfeniljikadara" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+                        <i class="ph ph-github-logo" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon-btn" href="https://linkedin.com/in/imfeniljikadara/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+                    </a>
+                    <a class="icon-btn" href="tel:+919737293555" title="Phone" aria-label="Phone">
+                        <i class="ph ph-phone" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Fenil Jikadara. All rights reserved.</p>
+        <div class="frame">
+            <p>&copy; 2026 Fenil Jikadara</p>
             <div class="footer-links">
-                <a href="mailto:feniljikadara2004@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://linkedin.com/in/imfeniljikadara/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/imfeniljikadara" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
+                <a href="#top">Back to top</a>
             </div>
         </div>
     </footer>
