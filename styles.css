@@ -397,7 +397,7 @@ nav {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: url('Image.png') center center / cover no-repeat;
+    background: url('Image.webp') center center / cover no-repeat;
 }
 
 .hero .frame > :not(.hero-bg) {
